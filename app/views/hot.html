@@ -1,1 +1,9 @@
 <p>Test hott</p>
+
+<ul>
+	<li ng-repeat="todo in todos">
+		<span ng-click="console.log('hey')">{{todo.name}}</span>
+		<a ng-href="todo.url">(url)</a>
+	</li>
+</ul>
+
