@@ -11,7 +11,7 @@ angular.module('yoSummerApp')
 	$scope.sss = "hey"
 
 
-	$scope.todos = $http.get( '/data/sample/sample.json')
-	.then (res) ->
-		$scope.todos = res.data
+#	$scope.todos = $http.get( '/data/sample/sample.json')
+#	.then (res) ->
+#		$scope.todos = res.data
 
