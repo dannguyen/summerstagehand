@@ -1,5 +1,34 @@
 'use strict';
 
+
+angular.module('yoSummerApp')
+  	.service 'summerStageEvents', ['$http', ($http) ->
+	  	EVENTS_DATA_URL = '/data/sample/events.json'
+
+	  	event_array = []
+	  	categories = []
+
+	  	@gofetch = (success_foo, url=EVENTS_DATA_URL) ->
+
+	  		$http.get(url).then (res) ->
+	   		event_array = res.data
+	   		console.log "In fetch,data length: #{event_array.length}"
+
+	   		# get categories
+	   		success_foo(event_array)
+
+	   @facet_categories = () ->
+	   	categories = _.chain(event_array)
+	   		.countBy (event) -> 
+	   			event.category
+	   		.value()   
+	   	console.log categories
+	   	categories
+	   		
+
+
+]
+###
 angular.module('yoSummerApp')
   .factory 'summerStageEvents', ($http) ->
     # Service logic
@@ -21,6 +50,7 @@ angular.module('yoSummerApp')
       		success_foo(res.data)
 
     }
+###
 
 #	$scope.todos = $http.get( '/data/sample/sample.json')
 #	.then (res) ->

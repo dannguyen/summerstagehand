@@ -9,11 +9,11 @@ angular.module('yoSummerApp', [])
       .when '/hot',
         templateUrl: 'views/hot.html'
         controller: 'HotCtrl'
-      .when '/fun',
-        templateUrl: 'views/fun.html'
-        controller: 'FunCtrl'
       .when '/calendar',
         templateUrl: 'views/calendar.html',
         controller: 'CalendarCtrl'
+      .when '/events',
+        templateUrl: 'views/events.html',
+        controller: 'EventsCtrl'
       .otherwise
         redirectTo: '/'
