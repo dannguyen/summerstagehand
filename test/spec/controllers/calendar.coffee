@@ -6,17 +6,21 @@ describe 'Controller: CalendarCtrl', () ->
   beforeEach module 'yoSummerApp'
 
   CalendarCtrl = {}
-  scope = {summerStageEvents: ''}
+  scope = {}
 
   # Initialize the controller and a mock scope
-  beforeEach inject ($controller, $rootScope) ->
+  beforeEach inject ($controller, $rootScope, summerStageEvents) ->
+    
+    summerStageEvents.gofetch = () ->
+      "nothing"
+
     scope = $rootScope.$new()
 
     CalendarCtrl = $controller 'CalendarCtrl', {
       $scope: scope
-      summerStageEvents: 
-        gofetch: () ->
     }
+
+
 
 
   it 'should refresh the events listing', () ->

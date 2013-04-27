@@ -7,8 +7,8 @@ angular.module('yoSummerApp')
 		$scope.categories = []
 
 		$scope.refreshCalendar = (data) ->
-			$scope.events = data
 			$scope.categories = summerStageEvents.facet_categories()  # duh, not good
+			$scope.events = data
 
 		summerStageEvents.gofetch($scope.refreshCalendar) # get events, fills $scope.events
 

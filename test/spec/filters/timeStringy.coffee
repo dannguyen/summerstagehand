@@ -14,4 +14,4 @@ describe 'Filter: timeStringy', () ->
     timeraw = "2013-08-30T01:00:00-04:00"
     timestr = "2013-08-30 01:00"
 
-   # expect(timeStringy timeraw).toBe timestr
+    expect(timeStringy timeraw).toBe timestr

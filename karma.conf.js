@@ -7,6 +7,8 @@ basePath = '';
 files = [
   JASMINE,
   JASMINE_ADAPTER,
+  'app/components/moment/moment.js',
+  'app/components/underscore/underscore.js',
   'app/components/angular/angular.js',
   'app/components/angular-mocks/angular-mocks.js',
   'app/scripts/*.coffee',
