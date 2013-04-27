@@ -1,0 +1,14 @@
+<p style="color:blue">This is the calendar view.</p>
+
+
+<div>
+	<h3>Events</h3>
+
+	<div ng-repeat="event in events" ng-model="events" class="">
+	  <a ng-href="" class="video">
+	    <h3><span>{{event.event.name}}</span></h3>
+	    <div class="time">{{event.event.start_time}}</div>
+	  </a>
+	</div>
+
+</div>

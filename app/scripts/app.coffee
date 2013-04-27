@@ -12,5 +12,8 @@ angular.module('yoSummerApp', [])
       .when '/fun',
         templateUrl: 'views/fun.html'
         controller: 'FunCtrl'
+      .when '/calendar',
+        templateUrl: 'views/calendar.html',
+        controller: 'CalendarCtrl'
       .otherwise
         redirectTo: '/'
