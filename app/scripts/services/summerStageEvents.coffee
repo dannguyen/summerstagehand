@@ -22,12 +22,6 @@ yoapp.service 'summerStageEvents', ['$http', ($http) ->
 	   		# get categories
 	   		success_foo(event_array) if success_foo?
 
-	   @facet_categories = () ->
-	   	categories = _.chain(event_array)
-	   		.countBy (event) -> 
-	   			event.category
-	   		.value()   
-	   	categories
 	   	
 ]
 

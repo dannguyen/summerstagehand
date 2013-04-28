@@ -4,27 +4,51 @@
 	<h2>Datepicker</h2>
 </div>
 
-	<h3>Events</h3>
 
 <div class="row">
-	<section class="span8">
-	<div ng-repeat="event in events"  class="">
-	   <a ng-href="/#/events/{{event.id}}"> 
-	  		<b>{{event.name}}</b>	  
-	  	</a>
+	<section class="span9">
 
-	    <div class="category"><em>{{event.category}} {{event.sub_category}}</em></div>
-	    <div class="time">{{[event.start_time, event.end_time] | timeRange }}</div>
-	</div>
+		<h3>Calendar</h3>
+
+		<div ng-repeat="event in events | orderBy:orderProp | filter:filterService.isPartOfActive">
+
+		   <a ng-href="/#/events/{{event.id}}"> 
+		  		<b>{{event.name}}</b>	  
+		  	</a>
+
+		    <div class="category"><em>{{event.category}} {{event.sub_category}}</em></div>
+		    <div class="datetime">
+		    	<span class="date" style="font-weight: bold">{{event.start_time | readableDate}}</span> 
+		    	{{[event.start_time, event.end_time] | timeRange }}
+		    </div>
+		</div>
 
 	</section> <!--span8-->
 
-	<section class="span4">
-	<ul>	
-			<li ng-repeat="(category,count) in categories" ng-model="categories" class="">
-			   <a ng-href=""> {{category}} </a>: {{count}}
+	<section class="span3">
+
+	<h4>Sort</h4>
+   <select ng-model="orderProp">
+     <option value="name">Alphabetical</option>
+     <option value="start_time">Newest</option>
+   </select>
+
+
+
+	<h4>Filters</h4>
+
+	<div class="button" ng-click="resetFilters()"><strong>Reset</strong></div>
+
+	<div ng-repeat="(filter_type, filter_names) in filterService.filterSets">
+		<p><b>{{filter_type}}</b></p>
+		<ul class="filters">
+			<li ng-repeat="filter_name in filter_names" ng-click="filterToggle(filter_name, filter_type)">
+			   <span ng-class="{active: isActiveControl(filter_name, filter_type)}">{{filter_name}}</span>
 			</li>
-	</ul>
+			
+		</ul>
+
+	</div>
 
 
 	</section> <!--span4-->
