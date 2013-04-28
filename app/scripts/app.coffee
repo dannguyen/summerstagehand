@@ -1,6 +1,6 @@
 'use strict'
 
-window._DATA_PATH = '/data/sample'
+window._DATA_PATH = '/data-hold'
 
 angular.module('yoSummerApp', ['ngResource'])
   .config ($routeProvider) ->
@@ -20,7 +20,7 @@ angular.module('yoSummerApp', ['ngResource'])
 #            summerStageEvents.gofetch() # get events, fills $scope.events
 
       .when '/events/:eventId',
-        templateUrl: 'views/events.html'
+        templateUrl: 'views/event-detail.html'
         controller: 'EventDetailCtrl'
           
       .otherwise

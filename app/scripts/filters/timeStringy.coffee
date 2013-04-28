@@ -14,3 +14,10 @@ angular.module('yoSummerApp')
 		(date_arr) ->
 			moment(date_arr[0]).format("h a") + " to " + moment(date_arr[1]).format("h a")
 
+	.filter 'readableDate', () ->
+		(datestr) ->
+			m = moment(datestr)
+			if m.format('MMMM').length > 4
+				m.format "dddd, MMM. D"	
+			else
+				m.format "dddd, MMMM D"

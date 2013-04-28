@@ -3,8 +3,10 @@
 
 yoapp = angular.module('yoSummerApp')
 
-yoapp.service 'summerStageEvents', ['$http', ($http) ->
 
+
+
+yoapp.service 'summerStageEvents', ['$http', ($http) ->
 	  	event_array = []
 	  	categories = []
 
@@ -30,7 +32,6 @@ yoapp.service 'summerStageEvents', ['$http', ($http) ->
 ]
 
 
-#angular.module('yoSummerApp', ['ngResource'])
 yoapp.factory 'SummerEvent', ['$resource', ($resource) ->
 
 

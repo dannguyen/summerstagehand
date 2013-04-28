@@ -21,8 +21,6 @@ describe 'Controller: CalendarCtrl', () ->
     }
 
 
-
-
   it 'should refresh the events listing', () ->
     scope.refreshCalendar("hi")
     expect(scope.events).toBe "hi"

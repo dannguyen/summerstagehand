@@ -11,6 +11,7 @@ files = [
   'app/components/underscore/underscore.js',
   'app/components/angular/angular.js',
   'app/components/angular-mocks/angular-mocks.js',
+  'app/components/angular-resource/angular-resource.js',
   'app/scripts/*.coffee',
    'app/scripts/**/*.coffee',
    'test/mock/**/*.coffee',
