@@ -8,8 +8,20 @@ angular.module('yoSummerApp')
 		$scope.events = []
 		$scope.categories = []
 
+
+
 		#default
 		$scope.orderProp = 'start_time'
+
+		$scope.runIsotope = () -> 
+			console.log "run isotope!"
+			
+			jQuery(".calendar").isotope( 
+				{ itemSelector : '.item', layoutMode : 'fitRows', filter: '.active'} 
+			)
+			
+			console.log "ran isotope!"
+	
 
 		$scope.resetFilters = () ->
 			filterService.resetAll()
@@ -18,6 +30,7 @@ angular.module('yoSummerApp')
 		$scope.filterToggle = (filter_name, filter_type) ->
 		#	console.log("filterToggle: #{filter_name}, inside of: #{filter_type}")
 			filterService.set_filter(filter_name, filter_type)
+			$scope.runIsotope()
 
 		# wrapper for dom controls
 		$scope.isActiveControl = (f_name, f_type) -> 
@@ -29,12 +42,12 @@ angular.module('yoSummerApp')
 			$scope.events = data
 			$scope.filterService.facetPluck $scope.events, 'category'
 			$scope.filterService.facetPluck $scope.events, 'sub_category'
-			$scope.filterService.facetPluck( $scope.events, 'num', (i) -> 
-				if i.id % 2 == 0
-					'even'
-				else
-					'odd'
-			)
+			
+
 		summerStageEvents.gofetch($scope.refreshCalendar) # get events, fills $scope.events
+
+#		$scope.$watch $scope.events, () ->
+#			console.log "HEY: #{$scope.events.length}"
+
 
 ]

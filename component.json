@@ -4,6 +4,7 @@
   "dependencies": {
     "angular": "~1.0.5",
     "underscore": "1.4.4",
+    "isotope": "1.5.25",
     "json3": "~3.2.4",
 	  "jquery": "1.8",
     "moment": "2.0.0",

@@ -10,18 +10,21 @@
 
 		<h3>Calendar</h3>
 
-		<div ng-repeat="event in events | orderBy:orderProp | filter:filterService.isPartOfActive">
+		<div class="calendar">
+			<div isotope-item ng-repeat="event in events | orderBy:orderProp " class="item event" ng-class="{active: filterService.isPartOfActive(event)}">
 
-		   <a ng-href="/#/events/{{event.id}}"> 
-		  		<b>{{event.name}}</b>	  
-		  	</a>
+			   <a ng-href="/#/events/{{event.id}}"> 
+			  		<b>{{event.name}}</b>	  
+			  	</a>
 
-		    <div class="category"><em>{{event.category}} {{event.sub_category}}</em></div>
-		    <div class="datetime">
-		    	<span class="date" style="font-weight: bold">{{event.start_time | readableDate}}</span> 
-		    	{{[event.start_time, event.end_time] | timeRange }}
-		    </div>
-		</div>
+			    <div class="category"><em>{{event.category}} {{event.sub_category}}</em></div>
+			    <div class="datetime">
+			    	<span class="date" style="font-weight: bold">{{event.start_time | readableDate}}</span> 
+			    	{{[event.start_time, event.end_time] | timeRange }}
+			    </div>
+			</div>
+		</div> <!-- events -->
+
 
 	</section> <!--span8-->
 
