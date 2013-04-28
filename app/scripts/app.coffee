@@ -1,6 +1,8 @@
 'use strict'
 
-angular.module('yoSummerApp', [])
+window._DATA_PATH = '/data/sample'
+
+angular.module('yoSummerApp', ['ngResource'])
   .config ($routeProvider) ->
     $routeProvider
       .when '/',
@@ -12,8 +14,18 @@ angular.module('yoSummerApp', [])
       .when '/calendar',
         templateUrl: 'views/calendar.html',
         controller: 'CalendarCtrl'
-      .when '/events',
-        templateUrl: 'views/events.html',
-        controller: 'EventsCtrl'
+#        resolve: 
+#          events: (summerStageEvents) ->
+#            console.log("resolving somethin")
+#            summerStageEvents.gofetch() # get events, fills $scope.events
+
+      .when '/events/:eventId',
+        templateUrl: 'views/events.html'
+        controller: 'EventDetailCtrl'
+          
       .otherwise
         redirectTo: '/'
+
+
+
+

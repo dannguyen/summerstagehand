@@ -1,33 +1,52 @@
 'use strict';
 
 
-angular.module('yoSummerApp')
-  	.service 'summerStageEvents', ['$http', ($http) ->
-	  	EVENTS_DATA_URL = '/data/sample/events.json'
+yoapp = angular.module('yoSummerApp')
+
+yoapp.service 'summerStageEvents', ['$http', ($http) ->
 
 	  	event_array = []
 	  	categories = []
 
-	  	@gofetch = (success_foo, url=EVENTS_DATA_URL) ->
+	  	# _DATA_PATH defined on window
+	  	ALL_EVENTS_PATH = "#{_DATA_PATH}/events/all.json"
+
+	  	@gofetch = (success_foo, url= ALL_EVENTS_PATH) ->
 
 	  		$http.get(url).then (res) ->
 	   		event_array = res.data
 	   		console.log "In fetch,data length: #{event_array.length}"
 
 	   		# get categories
-	   		success_foo(event_array)
+	   		success_foo(event_array) if success_foo?
 
 	   @facet_categories = () ->
 	   	categories = _.chain(event_array)
 	   		.countBy (event) -> 
 	   			event.category
 	   		.value()   
-	   	console.log categories
 	   	categories
-	   		
+	   	
+]
+
+
+#angular.module('yoSummerApp', ['ngResource'])
+yoapp.factory 'SummerEvent', ['$resource', ($resource) ->
+
+
+	 $resource("#{_DATA_PATH}/events/:eventId.json", {}, {
+	 	query:
+	 		method: 'GET'
+	 		params:
+	 			eventId: 'events'
+	 		isArray: true
+
+	 })
 
 
 ]
+
+
 ###
 angular.module('yoSummerApp')
   .factory 'summerStageEvents', ($http) ->
