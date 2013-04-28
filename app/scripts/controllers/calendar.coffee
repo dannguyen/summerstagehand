@@ -28,9 +28,10 @@ angular.module('yoSummerApp')
 
 		# passes clicked-on facet, cat to filterService
 		$scope.filterToggle = (filter_name, filter_type) ->
-		#	console.log("filterToggle: #{filter_name}, inside of: #{filter_type}")
 			filterService.set_filter(filter_name, filter_type)
-			$scope.runIsotope()
+			_.delay () -> 
+				$scope.runIsotope()
+			, 300
 
 		# wrapper for dom controls
 		$scope.isActiveControl = (f_name, f_type) -> 
