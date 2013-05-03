@@ -43,20 +43,33 @@ angular.module('yoSummerApp')
 	   	# quick check to see if any filters have been set
 	   	return true if !self.hasAnyFiltersSet() 
 
-	   	return false for f_type, f_vals of self.activeFilters when( 
-	   	# if not included in every filter, then return false
-	   		!!!item[f_type] || (!_.isEmpty(f_vals) && !_.include( f_vals, item[f_type] ))  
-	   	)
 
-	   	# otherwise, if no early break, then all conditions are good
+	   	for f_type, f_vals of self.activeFilters
+
+	   		if !_.isEmpty(f_vals)
+	   			item_value = item[f_type]
+
+	   			return false if !item_value
+
+	   			if !_.isArray item_value
+	   				return false if !_.include f_vals, item_value
+	   			else
+	   				return false if _.isEmpty(_.intersection( f_vals, item_value))
+
+
 	   	return true 
 
 
 	   @facetPluck = (arr, propName, goFoo) ->
 
 	   	if !goFoo?
-		   	collection = _.pluck(arr, propName)
-		   ## return groupBy
+		   	collection = _.map arr, (x) ->
+		   		x[propName]
+
+		   	collection = _.flatten collection
+
+
+		  		 ## return groupBy
 		   else
 		   	collection = [] 
 		   	_.each(arr, (item) ->

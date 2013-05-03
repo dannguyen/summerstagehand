@@ -12,12 +12,16 @@ yoapp.controller 'EventsCtrl', ["$scope", "$location",
 
 
 yoapp.controller 'EventDetailCtrl', ["$scope", "$routeParams", "SummerEvent", 
-		($scope, $routeParams, SummerEvent) -> 
-			$scope.event = SummerEvent.get( 
-				{eventId: $routeParams.eventId},
-				(event) ->
-					console.log event.name ## debugging 
-			)
+   ($scope, $routeParams, SummerEvent) -> 
+      resp = SummerEvent.get( 
+         {eventId: $routeParams.eventId},
+            (d) ->
+               $scope.event = d.event ## brittle
+      )
+
+      
+
+
 ]
 
 

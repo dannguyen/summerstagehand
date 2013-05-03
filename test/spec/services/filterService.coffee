@@ -46,12 +46,22 @@ describe 'Service: filterService', () ->
 
 	it "should @isPartOfActive should AND across different active filter sets", () ->
 
+
 		filterService.set_filter('Orange', 'Fruits')
 		filterService.set_filter('Good', 'Quality')
 
 		expect(filterService.isPartOfActive({Fruits: 'Orange'})).toBe false
 		expect(filterService.isPartOfActive({Fruits: 'Orange', Quality: 'Poor'})).toBe false
 		expect(filterService.isPartOfActive({Fruits: 'Orange', Quality: 'Good'})).toBe true
+
+	it "should @isPartOfActive should evaluate arrays", () ->
+		filterService.set_filter('Orange', 'Fruits')
+
+		expect(filterService.isPartOfActive({Fruits: ['Orange', 'Kiwi']})).toBe true
+		expect(filterService.isPartOfActive({Fruits: 'Apple'})).toBe false
+
+
+
 	it "should reset filters", () ->
 		filterService.set_filter('Orange', 'Fruits')
 		filterService.resetAll()
@@ -67,6 +77,17 @@ describe 'Service: filterService', () ->
 
 		filterService.facetPluck(arr, 'name')
 		expect(filterService.filterSets['name'].length).toBe 3
+
+	it 'should facetPluck with arrays', () ->
+		arr = [
+			{name: ['dan','joe']},
+			{name: 'bob'},
+			{name: 'mary'}
+		]
+
+		filterService.facetPluck(arr, 'name')
+		expect(filterService.filterSets['name'].length).toBe 4
+
 
 
 	it "should facetPluck with foo given", () ->

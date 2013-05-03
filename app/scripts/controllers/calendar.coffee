@@ -31,7 +31,7 @@ angular.module('yoSummerApp')
 			filterService.set_filter(filter_name, filter_type)
 			_.delay () -> 
 				$scope.runIsotope()
-			, 300
+			, 100
 
 		# wrapper for dom controls
 		$scope.isActiveControl = (f_name, f_type) -> 
@@ -41,9 +41,10 @@ angular.module('yoSummerApp')
 
 		$scope.refreshCalendar = (data) ->
 			$scope.events = data
-			$scope.filterService.facetPluck $scope.events, 'category'
-			$scope.filterService.facetPluck $scope.events, 'sub_category'
-			
+#			for event, idx in $scope.events  TODO: make this read from attributes
+			$scope.filterService.facetPluck $scope.events, 'categories'
+			$scope.filterService.facetPluck $scope.events, 'borough'
+			$scope.filterService.facetPluck $scope.events, 'features'
 
 		summerStageEvents.gofetch($scope.refreshCalendar) # get events, fills $scope.events
 
