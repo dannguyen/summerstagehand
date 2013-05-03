@@ -19,9 +19,7 @@ yoapp.controller 'EventDetailCtrl', ["$scope", "$routeParams", "SummerEvent",
                $scope.event = d.event ## brittle
       )
 
-      
-
-
+   
 ]
 
 
