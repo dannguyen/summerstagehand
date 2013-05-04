@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('summerstagehandApp')
-  .factory 'SummerVideo', () ->
+  .factory 'SummerStageVideo', () ->
     # Service logic
     # ...
 

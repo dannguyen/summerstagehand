@@ -60,6 +60,7 @@ angular.module('summerstagehandApp')
 	   	return true 
 
 
+	   # modifies @filterSets
 	   @facetPluck = (arr, propName, goFoo) ->
 
 	   	if !goFoo?

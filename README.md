@@ -11,7 +11,7 @@ TODO
 
 TODO
 May 3
-Create the directive for videos to connect to SummerVideo.getDetails
+Create the directive for videos to connect to SummerStageVideo.getDetails
    detaisl should include:
       youtube video id
       name

@@ -30,25 +30,20 @@ angular.module('summerstagehandApp')
 			else
 				m.format "dddd, MMMM D"
 
-	.filter 'timeRangeMin', () ->
+	.filter 'scheduledTimeMinimal', () ->
 		(date_arr) ->
 			## assumes that days are the same
 			m1 = moment(date_arr[0])
 			m2 = moment(date_arr[1])
 
-			full_time_str = "h_1 a_1 to "
+			# 11:20am-5:30pm
+			full_time_str = m1.format('h:mma') + "-" + m2.format('h:mma')
 
-			# if same time half, then don't repeat AM, PM
-		#	todo
+			# if same AM/PM, then take out first reference
+			if m1.format('a') == m2.format('a')
+				full_time_str = full_time_str.replace(/\w{2}(?=-)/,'')
 
-			# if no minutes, then omit minutes
-		#	todo
+			# remove zero minutes
+			full_time_str = full_time_str.replace(/:00/g, '')
 
-
-
-			
-
-			# if diff day, then don't don't have AM PM
-			# if diff timespan (am/pm), then 
-			m1.format("h a") + " to " + m2.format("h a")
 

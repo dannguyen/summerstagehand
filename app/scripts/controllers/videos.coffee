@@ -1,14 +1,14 @@
 'use strict'
 
 angular.module('summerstagehandApp')
-   .controller 'VideosCtrl', ['$scope', 'SummerVideo', '$routeParams', ($scope, SummerVideo, $routeParams) ->
+   .controller 'VideosCtrl', ['$scope', 'SummerStageVideo', '$routeParams', ($scope, SummerStageVideo, $routeParams) ->
 
-      $scope.videos = SummerVideo.getVideos()
+      $scope.videos = SummerStageVideo.getVideos()
       console.log "Videos: #{$scope.videos.length}"
 
 
       if !!$routeParams.videoId
-	      $scope.video = SummerVideo.getDetails($routeParams.videoId) 
+	      $scope.video = SummerStageVideo.getDetails($routeParams.videoId) 
 
    ]
 

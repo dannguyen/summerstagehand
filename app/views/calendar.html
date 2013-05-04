@@ -17,7 +17,7 @@
 	
 			    <div class="datetime">
 			    	<span class="date" style="font-weight: bold">{{event.start_time | readableDate}}</span> 
-			    	{{[event.start_time, event.end_time] | timeRange }}
+			    	{{[event.start_time, event.end_time] | scheduledTimeMinimal }}
 			    </div>
 
 
