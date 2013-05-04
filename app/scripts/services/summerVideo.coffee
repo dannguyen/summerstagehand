@@ -5,13 +5,20 @@ angular.module('summerstagehandApp')
     # Service logic
     # ...
 
-    videoData = [
-      {
-         name: "A Video",
-         youtube_id: "QJ4tyowlVUM",
-         description: "Lorem ipsum lasdf Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, veniam, numquam asperiores eaque ipsum vero illum libero molestiae inventore temporibus repellat nam! Pariatur, eveniet."
-      }
-    ]
+    videoData = []
+
+
+    vidmock = {
+         id: "#{Math.round(Math.random(100) * 100)}"
+         name: "A Video #{Math.round(Math.random(100) * 100)}"
+         youtube_id: "A1QL_7hrIEI"
+         description: "Lorem ipsum lasdf Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, veniam, numquam asperiores eaque ipsum vero illum libero molestiae inventore temporibus repellat nam! Pariatur, eveniet." }
+
+    vidmock.youtube_embed_url = "http://www.youtube.com/embed/#{vidmock.youtube_id}?rel=0&theme=light&autoplay=1"
+
+
+
+    videoData.push vidmock 
 
     # Public API here
     {
@@ -32,6 +39,8 @@ angular.module('summerstagehandApp')
           v.description = _.shuffle( v.description.split(' ')).join(' ')
           arr.push v 
         arr 
+
+
 
 
     }

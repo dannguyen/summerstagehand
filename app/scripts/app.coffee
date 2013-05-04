@@ -8,9 +8,6 @@ angular.module('summerstagehandApp', ['ngResource'])
       .when '/',
         templateUrl: 'views/main.html'
         controller: 'MainCtrl'
-      .when '/hot',
-        templateUrl: 'views/hot.html'
-        controller: 'HotCtrl'
       .when '/calendar',
         templateUrl: 'views/calendar.html',
         controller: 'CalendarCtrl'
@@ -21,10 +18,17 @@ angular.module('summerstagehandApp', ['ngResource'])
       .when '/videos',
         templateUrl: 'views/videos.html'
         controller: 'VideosCtrl'
+      .when '/videos/:videoId',
+        templateUrl: 'views/video-detail.html'
+        controller: 'VideosCtrl'
+
       .when '/events/:eventId',
         templateUrl: 'views/event-detail.html'
         controller: 'EventDetailCtrl'
           
+      .when '/places',
+        templateUrl: 'views/places.html',
+        controller: 'PlacesCtrl'
       .otherwise
         redirectTo: '/'
 

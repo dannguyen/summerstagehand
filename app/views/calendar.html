@@ -11,7 +11,7 @@
 		<h3>Calendar</h3>
 
 		<div class="calendar">
-			<div isotope-item ng-repeat="event in events | orderBy:orderProp " class="item event" ng-class="{active: filterService.isPartOfActive(event)}">
+			<div isotope-item ng-repeat="event in events | orderBy:orderProp " class="item event" ng-class="{active: filterService.isPartOfActive(event)}" ng-animate="{enter: 'animate-enter'}">
 
 				<div class="imagebox"></div>
 	
@@ -22,50 +22,46 @@
 
 
 			   <a ng-href="/#/events/{{event.id}}"> 
-			  		<b>{{event.name}}</b>	  
+			  		{{event.short_name}}  
 			  	</a>
 
 
 			    <div class="category"><em>{{event.category}} {{event.sub_category}}</em></div>
 			</div>
-		</div> <!-- events -->
+		</div> <!-- calendar -->
 
 
 	</section> <!--span8-->
 
 	<section class="span3">
 
+
+
+
+
+
+
+	<h4>Testing</h4>
+
+
+ <label ng-repeat="tFilter in testFilters">
+    <input
+      type="checkbox"
+      ng-model="tFilter.checked"
+    >
+
+    <span>{{tFilter.name}}</span>
+  </label>
+
+
+
+
+
 	<h4>Sort</h4>
    <select ng-model="orderProp">
      <option value="name">Alphabetical</option>
      <option value="start_time">Newest</option>
    </select>
-
-<h4>testchkbox</h4>
-
-			
-<div class="btn-group">
-
-        <button class="btn dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
-
-            <ul class="dropdown-menu">
-                
-                <li>&nbsp;&nbsp;&nbsp;<input type="checkbox" name="months[]" value="2011-01-01" id="id20111"/> 
-                <label for="id20111">Jan</label></li>
-                    
-                <li>&nbsp;&nbsp;&nbsp;<input type="checkbox" name="months[]" value="2011-02-01" id="id20112"/> <label for="id20112">Feb</label></li>
-                    
-                <li>&nbsp;&nbsp;&nbsp;<input type="checkbox" name="months[]" value="2011-03-01" id="id20113"/> <label for="id20113">Mar</label></li>
-                    
-                <li>&nbsp;&nbsp;&nbsp;<input type="submit" class="btn btn-info"/></li>
-                <li><a href="?filter=month">All</a></li>
-                
-            </ul>
-        </div>
-
-
-
-
 
 
 	<h4>Filters</h4>

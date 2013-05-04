@@ -8,8 +8,6 @@ angular.module('summerstagehandApp')
 		$scope.events = []
 		$scope.categories = []
 
-
-
 		#default
 		$scope.orderProp = 'start_time'
 
@@ -46,9 +44,14 @@ angular.module('summerstagehandApp')
 		$scope.refreshCalendar = (data) ->
 			$scope.events = data
 #			for event, idx in $scope.events  TODO: make this read from attributes
-			$scope.filterService.facetPluck $scope.events, 'categories'
-			$scope.filterService.facetPluck $scope.events, 'borough'
-			$scope.filterService.facetPluck $scope.events, 'features'
+			$scope.filterService.facetPluck $scope.events, 'categories'#, 'dropdown'
+			$scope.filterService.facetPluck $scope.events, 'borough'#, 'dropdown'
+			$scope.filterService.facetPluck $scope.events, 'features'#, 'checkbox'
+
+			$scope.checkBoxes = []
+			$scope.dropBoxes = []
+
+			$scope.checkBoxes << $scope.filterService # todo!!!
 
 		summerStageEvents.gofetch($scope.refreshCalendar) # get events, fills $scope.events
 

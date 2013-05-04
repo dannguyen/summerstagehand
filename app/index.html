@@ -25,6 +25,33 @@
       <script src="components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
+
+<header class="banner" role="banner">
+  <div class="container">
+
+    <div class="logo"><a href="/">SUMMERSTAGE<span style="color:green;">HAND</span></a></div>
+    <div class="tagline">A guide for New York City's summerlong festival</div>
+
+
+  </div> <!--container-->
+
+</header>
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+   
+    <div class="container">
+    <ul class="nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#/calendar">Calendar</a></li>
+      <li><a href="#/videos">Videorama</a></li>
+      <li><a href="#/places">Venues</a></li>
+    </ul>
+ </div><!--container-->
+  </div>
+</div>
+
+
+
     <!-- Add your site or application content here -->
     <div class="container" ng-view></div>
 
@@ -58,14 +85,17 @@
     <script src="scripts/directives/videoStub.js"></script>
     <script src="scripts/controllers/videos.js"></script>
 
+    <script src="scripts/controllers/places.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
+/*
       var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
       g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
+*/      
     </script>
   </body>
 </html>
