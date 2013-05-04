@@ -1,7 +1,7 @@
 'use strict';
 
 
-yoapp = angular.module('yoSummerApp')
+yoapp = angular.module('summerstagehandApp')
 
 
 yoapp.service 'summerStageEvents', ['$http', ($http) ->
@@ -38,7 +38,7 @@ yoapp.factory 'SummerEvent', ['$resource', ($resource) ->
 
 
 ###
-angular.module('yoSummerApp')
+angular.module('summerstagehandApp')
   .factory 'summerStageEvents', ($http) ->
     # Service logic
     # ...

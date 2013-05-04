@@ -3,7 +3,7 @@
 describe 'Filter: time strings', () ->
 
   # load the filter's module
-  beforeEach module 'yoSummerApp'
+  beforeEach module 'summerstagehandApp'
 
   # initialize a new instance of the filter before each test
   tfit = {}

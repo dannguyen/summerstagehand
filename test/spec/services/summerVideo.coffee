@@ -3,7 +3,7 @@
 describe 'Service: SummerVideo', () ->
 
    # load the service's module
-   beforeEach module 'yoSummerApp'
+   beforeEach module 'summerstagehandApp'
 
    # instantiate service
    SummerVideo = {}

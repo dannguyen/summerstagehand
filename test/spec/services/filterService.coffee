@@ -3,7 +3,7 @@
 describe 'Service: filterService', () ->
 
 	# load the service's module
-	beforeEach module 'yoSummerApp'
+	beforeEach module 'summerstagehandApp'
 
 	# instantiate service
 	filterService = {}

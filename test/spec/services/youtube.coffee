@@ -1,6 +1,6 @@
 describe 'Services', () ->
     
-    beforeEach module 'yoSummerApp'
+    beforeEach module 'summerstagehandApp'
     
     svc = "null"
     mockBackend = "null"

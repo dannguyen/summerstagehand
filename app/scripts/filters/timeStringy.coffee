@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('yoSummerApp')
+angular.module('summerstagehandApp')
 	.filter 'timeStringy', () ->
    	(input) ->
       	moment(input).format("YYYY-MM-DD HH:mm")

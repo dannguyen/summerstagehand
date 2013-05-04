@@ -1,7 +1,7 @@
 'use strict'
 
 describe 'Directive: placeStub', () ->
-  beforeEach module 'yoSummerApp'
+  beforeEach module 'summerstagehandApp'
 
   element = {}
 

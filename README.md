@@ -18,3 +18,9 @@ Create the directive for videos to connect to SummerVideo.getDetails
       description
       views
    directive should build the video display
+
+
+
+   Change isotope directive to:
+        $scope.$watch 'pagedInfiniteItems', () ->
+         console.log("pageditems changed: #{$scope.pagedInfiniteItems.length} ")

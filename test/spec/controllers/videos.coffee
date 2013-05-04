@@ -1,19 +1,16 @@
 'use strict'
 
-describe 'Controller: MainCtrl', () ->
+describe 'Controller: VideosCtrl', () ->
 
   # load the controller's module
   beforeEach module 'summerstagehandApp'
 
-  MainCtrl = {}
+  VideosCtrl = {}
   scope = {}
 
   # Initialize the controller and a mock scope
   beforeEach inject ($controller, $rootScope) ->
     scope = $rootScope.$new()
-    MainCtrl = $controller 'MainCtrl', {
+    VideosCtrl = $controller 'VideosCtrl', {
       $scope: scope
     }
-
-  it 'should attach a list of awesomeThings to the scope', () ->
-    expect(scope.awesomeThings.length).toBe 3;

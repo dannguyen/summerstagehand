@@ -3,7 +3,7 @@
 describe 'Controller: CalendarCtrl', () ->
 
   # load the controller's module
-  beforeEach module 'yoSummerApp'
+  beforeEach module 'summerstagehandApp'
 
   CalendarCtrl = {}
   scope = {}

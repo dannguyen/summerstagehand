@@ -1,7 +1,7 @@
 'use strict'
 
 describe 'Directive: eventListing', () ->
-  beforeEach module 'yoSummerApp'
+  beforeEach module 'summerstagehandApp'
 
   element = {}
 

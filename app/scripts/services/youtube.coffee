@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('yoSummerApp')
+angular.module('summerstagehandApp')
   .service 'youtubeVid', ['$http', ($http) ->
       apiBaseUrl = "https://gdata.youtube.com/feeds/api/"
       apiVersion = 2

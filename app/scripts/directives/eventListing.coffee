@@ -1,7 +1,7 @@
 'use strict';
 
 ## not working
-angular.module('yoSummerApp')
+angular.module('summerstagehandApp')
   .directive('eventListing', () ->
     template: '<div></div>'
     restrict: 'E'
@@ -9,7 +9,7 @@ angular.module('yoSummerApp')
       element.text 'this is the eventListing directive'
   )
 
-angular.module('yoSummerApp')
+angular.module('summerstagehandApp')
 	.directive('isotopeGrid', () ->
 		template: '<div></div>'
 		restrict: 'A'
@@ -24,7 +24,7 @@ angular.module('yoSummerApp')
 	)
 
 
-angular.module('yoSummerApp')
+angular.module('summerstagehandApp')
 	.directive('isotopeItem',['$timeout', ($timeout) ->
 		link: (scope, element, attrs, controller) ->
 			if attrs.ngRepeat && scope.$last == true

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('yoSummerApp')
+angular.module('summerstagehandApp')
    .directive('placeStub', () ->
 #      templateUrl: 'views/place-stub.html'
       template: "<em>x{{placeName}}x -- {{ev.name}}</em>"

@@ -1,6 +1,6 @@
 'use strict'
 
-yoapp = angular.module('yoSummerApp')
+yoapp = angular.module('summerstagehandApp')
 
 yoapp.controller 'EventsCtrl', ["$scope", "$location",
    	($scope, $location) ->

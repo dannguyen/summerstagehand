@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('yoSummerApp')
+angular.module('summerstagehandApp')
 	.controller 'CalendarCtrl', ['$scope', 'summerStageEvents', 'filterService', 
 	($scope, summerStageEvents, filterService) ->
 

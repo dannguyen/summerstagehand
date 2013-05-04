@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('yoSummerApp')
+angular.module('summerstagehandApp')
 	.service 'filterService', () ->
 	 # Service logic
 	 # ...

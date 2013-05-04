@@ -2,7 +2,7 @@
 
 window._DATA_PATH = '/data-hold'
 
-angular.module('yoSummerApp', ['ngResource'])
+angular.module('summerstagehandApp', ['ngResource'])
   .config ($routeProvider) ->
     $routeProvider
       .when '/',
@@ -18,7 +18,9 @@ angular.module('yoSummerApp', ['ngResource'])
 #          events: (summerStageEvents) ->
 #            console.log("resolving somethin")
 #            summerStageEvents.gofetch() # get events, fills $scope.events
-
+      .when '/videos',
+        templateUrl: 'views/videos.html'
+        controller: 'VideosCtrl'
       .when '/events/:eventId',
         templateUrl: 'views/event-detail.html'
         controller: 'EventDetailCtrl'
