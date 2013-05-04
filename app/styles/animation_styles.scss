@@ -4,11 +4,11 @@
  have provided within the ngAnimate attribute.
 */
 .animate-enter-setup {
- -webkit-transition: 1s linear all; /* Safari/Chrome */
- -moz-transition: 1s linear all; /* Firefox */
- -ms-transition: 1s linear all; /* IE10 */
- -o-transition: 1s linear all; /* Opera */
- transition: 1s linear all; /* Future Browsers */
+ -webkit-transition: 0.5s ease-in all; /* Safari/Chrome */
+ -moz-transition: 0.5s ease-in all; /* Firefox */
+ -ms-transition: 0.5s ease-in all; /* IE10 */
+ -o-transition: 0.5s ease-in all; /* Opera */
+ transition: 0.5s ease-in all; /* Future Browsers */
  
  /* The animation preparation code */
  opacity: 0;
@@ -53,6 +53,7 @@
   /* view the Github link for more CSS easing animations */
 }
 
+/*
 .fade-hide-setup, .fade-show-setup {
   -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
   -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
@@ -73,7 +74,7 @@
 .fade-show-setup.fade-show-start {
   opacity:1;
 }
-
+*/
 
 
 /**** Isotope CSS3 transitions ****/
@@ -87,6 +88,7 @@
           transition-duration: 0.8s;
 }
 
+/*
 .isotope {
   -webkit-transition-property: height, width;
      -moz-transition-property: height, width;
@@ -94,7 +96,7 @@
        -o-transition-property: height, width;
           transition-property: height, width;
 }
-
+*/
 .isotope .isotope-item {
   -webkit-transition-property: -webkit-transform, opacity;
      -moz-transition-property:    -moz-transform, opacity;

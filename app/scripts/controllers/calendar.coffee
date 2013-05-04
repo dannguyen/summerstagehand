@@ -13,14 +13,18 @@ angular.module('summerstagehandApp')
 		#default
 		$scope.orderProp = 'start_time'
 
+		$scope.$watch "events", () ->
+			console.log "HEY: #{$scope.events.length}"
+			, true
+
 		$scope.runIsotope = () -> 
-			console.log "run isotope!"
+			console.log "running isotope!"
 			
 			jQuery(".calendar").isotope( 
-				{ itemSelector : '.item', layoutMode : 'fitRows', filter: '.active'} 
+				{ itemSelector : '.item',  filter: '.active'} 
 			)
 			
-			console.log "ran isotope!"
+			console.log "ran isotope already!"
 	
 
 		$scope.resetFilters = () ->
