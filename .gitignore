@@ -1,6 +1,7 @@
 node_modules
 dist
 app/data-hold
+app/images/vendor
 .tmp
 .sass-cache
 app/components

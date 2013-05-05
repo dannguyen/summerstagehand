@@ -1,8 +1,8 @@
 @import "compass_twitter_bootstrap";
-
-body{ padding-top:40px;}
+/*body{ padding-top:40px;}*/
 @import "compass_twitter_bootstrap_responsive";
 @import "animation_styles";
+@import "video_styles";
 
 ul.filters{
 	li{ 
@@ -50,19 +50,31 @@ footer.footer{
 .logo{
 	font-weight: bold;
 	font-size: 32px;
+	@media (max-width: 767px) {
+		font-size: 1.3em;
+	}
+
 }
 
 header.banner{
-	background: #eee;
 	padding: 0.5em 0;
+	@media (max-width: 767px) {
+			padding: 0.5em 20px;
+			margin-left: -20px;
+			margin-right: -20px;
+	}
 }
 
 
+.navbar{
+	margin-bottom: 0px;
+	@media (max-width: 767px) {
+			margin-left: -20px;
+			margin-right: -20px;
+	}
+}
 
 .navbar .container{
-	@media (min-width: 1200px) {
-		width: 1170px;
-	}
 
 	width: 940px;
 
@@ -70,10 +82,15 @@ header.banner{
 		width: 724px;
 	}
 
-	@media (max-width: 767px) {
-		width: auto;
+	@media (max-width: 767px) {		
+			width: auto;
+
 	}
 
 }
 
+
+#subsidiary-nav{
+	display: none;
+}
 

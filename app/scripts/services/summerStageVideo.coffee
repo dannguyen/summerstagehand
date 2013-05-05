@@ -12,6 +12,8 @@ angular.module('summerstagehandApp')
          id: "#{Math.round(Math.random(100) * 100)}"
          name: "A Video #{Math.round(Math.random(100) * 100)}"
          youtube_id: "A1QL_7hrIEI"
+         # http://i.ytimg.com/vi/A1QL_7hrIEI/hqdefault.jpg
+         youtube_image: 'images/video-image.jpg'
          description: "Lorem ipsum lasdf Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, veniam, numquam asperiores eaque ipsum vero illum libero molestiae inventore temporibus repellat nam! Pariatur, eveniet." }
 
     vidmock.youtube_embed_url = "http://www.youtube.com/embed/#{vidmock.youtube_id}?rel=0&theme=light&autoplay=1"
