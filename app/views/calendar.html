@@ -13,7 +13,7 @@
 		<div class="calendar">
 			<div isotope-item ng-repeat="event in events | orderBy:orderProp " class="item event" ng-class="{active: filterService.isPartOfActive(event)}" ng-animate="{enter: 'animate-enter'}">
 
-				<div class="imagebox"></div>
+				<div class="imagebox minopt"></div>
 	
 			    <div class="datetime">
 			    	<span class="date" style="font-weight: bold">{{event.start_time | readableDate}}</span> 
