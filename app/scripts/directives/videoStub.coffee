@@ -4,10 +4,13 @@ angular.module('summerstagehandApp')
   .directive('videoStub', () ->
     template: """
     	<div class="imgwrap">
-			<img ng-src="{{video.youtube_image}}" alt="{{video.name}}">
+       <a href="/#/videos/{{video.uid}}"> 
+  			<img ng-src="{{video.thumbnail}}" alt="{{video.title}}">
+        </a>
     	</div>	
-      <div class="name">
-      	<a href="/#/videos/{{video.id}}">{{video.name}}</a>
+
+      <div class="title">
+      	<a href="/#/videos/{{video.uid}}">{{video.title}}</a>
       	</div>
       <div class="desc">{{video.description}}</div>
     """

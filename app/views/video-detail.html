@@ -1,6 +1,10 @@
-<h2>Video: {{video.name}}</h2>
+<h2>Video: {{video.title}}</h2>
 
  <div class="flex-video widescreen"> <!--TK: should come from youtube data -->
-   <iframe id="player" src="{{video.youtube_embed_url}}" frameborder="0" allowfullscreen></iframe>
+   <iframe id="player" ng-src="{{video.uid | youtubeSrc}}" frameborder="0" allowfullscreen></iframe>
  </div>
 
+
+<div ng-show="dataReady">
+   <h3>Event: {{event.name}}</h3>
+</div>

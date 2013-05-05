@@ -32,7 +32,6 @@ angular.module('summerstagehandApp')
 
 	   @resetAll = () ->
 	   	# just blank out activeFilters
-	   	console.log "RESET!!"
 	   	self.activeFilters = {}
 
 	   @isActiveInFilterSet = (f_name, f_type) ->

@@ -13,6 +13,12 @@ angular.module('summerstagehandApp')
 			console.log(arr.join("xx"))
 			arr.join("")
 
+	.filter 'youtubeSrc', () ->
+		(vid) ->
+			# converts to youtube video with unique vid identifier
+			"http://www.youtube.com/embed/#{vid}?rel=0&theme=light&autoplay=0"
+
+
 	.filter 'timeStringy', () ->
    	(input) ->
       	moment(input).format("YYYY-MM-DD HH:mm")
