@@ -3,7 +3,6 @@
 angular.module('summerstagehandApp')
 	.controller 'PlacesCtrl', ["$scope", "$routeParams", "SummerStagePlace", "SummerStagePlaces",   
 		($scope, $routeParams, SummerStagePlace, SummerStagePlaces) ->
-			console.log("in places")
 
 			$scope.places = SummerStagePlaces.get( {}, (data) ->
 				$scope.places = data

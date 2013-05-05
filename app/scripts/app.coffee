@@ -18,9 +18,13 @@ angular.module('summerstagehandApp', ['ngResource', 'ngSanitize'])
         templateUrl: 'views/video-detail.html'
         controller: 'VideosCtrl'
 
+      .when '/events',
+        templateUrl: 'views/events.html'
+        controller: 'EventsCtrl'
+
       .when '/events/:eventId',
         templateUrl: 'views/event-detail.html'
-        controller: 'EventDetailCtrl'
+        controller: 'EventsCtrl'
           
       .when '/places',
         templateUrl: 'views/places.html',

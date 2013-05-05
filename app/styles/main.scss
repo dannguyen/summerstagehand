@@ -42,7 +42,7 @@ ul.filters{
 footer.footer{
 	padding: 1.5em 0;
 	margin-top: 2.0em;
-	background: #eee;
+	background: #222;
 	min-height: 150px;
 
 }
@@ -92,5 +92,19 @@ header.banner{
 
 #subsidiary-nav{
 	display: none;
+}
+
+.tk-event{
+	margin-bottom: 18px;
+	height: 150px;
+	overflow: hidden;
+	background: white;
+
+	@media (max-width: 480px) {		
+			width: auto;
+			height: auto;
+
+	}
+
 }
 

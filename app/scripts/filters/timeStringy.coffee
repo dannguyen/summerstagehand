@@ -10,7 +10,6 @@ angular.module('summerstagehandApp')
 
 			arr = _.map (txt.split("\n")), (p) -> 
 				"<p>#{p}</p>"
-			console.log(arr.join("xx"))
 			arr.join("")
 
 	.filter 'youtubeSrc', () ->
@@ -36,9 +35,9 @@ angular.module('summerstagehandApp')
 		(datestr) ->
 			m = moment(datestr)
 			if m.format('MMMM').length > 4
-				m.format "MMM. D, dddd"	
+				m.format "dddd, MMM. D"	
 			else
-				m.format "MMMM D, dddd"
+				m.format "dddd, MMMM D"
 
 	.filter 'scheduledTimeMinimal', () ->
 		(date_arr) ->

@@ -1,1 +1,69 @@
 <h2>Events</h2>
+
+<div class="row">
+
+
+   
+
+   <section ng-repeat="(day, events) in groupedEvents" ng-animate="{enter: 'animate-enter'}">
+
+      <h4>Week of {{day}}</h4>
+
+      <div class="row">
+         <div ng-repeat="event in events" ng-animate="{enter: 'animate-enter'}" class="span6">
+
+               <div class="tk-event">
+
+                  <div class="sub row">
+            
+             <div class="span2">
+                          
+                           <div class="minopt">
+                              <img src="http://placekitten.com/150/100" alt="">
+                           </div>
+
+                       </div>
+
+                       <div class="span4"> 
+
+              
+<div class="row">
+                        <div class="span2">
+                           <div class="datetime">
+                             {{[event.start_time, event.end_time] | scheduledTimeMinimal }}
+                             <span class="date" style="font-weight: bold">{{event.start_time | readableDate}}</span> 
+                             
+                          </div>
+  
+                        </div>
+                        <div class="span2">
+                                                  <div class="place"><strong>{{event.borough}}</strong> / {{event.place_name}}</div>
+  
+                        </div>
+
+</div>
+
+                          <div class="category"><em>{{event.category}} {{event.sub_category}}</em></div>
+  
+   
+                          
+  
+                          <a ng-href="/#/events/{{event.id}}"> 
+                             {{event.short_name}}  
+                          </a>
+                       
+                       
+                       </div> <!--span3 -->
+
+                      
+                  </div>
+
+               </div> <!--tk-event-->
+            </div> <!--span -->
+      </div>
+   </div>
+ 
+
+    </section>  
+
+</div>

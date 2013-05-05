@@ -1,0 +1,123 @@
+<p style="color:blue">This is the calendar view.</p>
+
+
+
+<div class="row">
+   <section class="span9">
+
+      <h3>Calendar</h3>
+
+      <div class="row">
+
+      <div class="calendar">
+            <div isotope-item ng-repeat="event in events | orderBy:orderProp " class="item" ng-class="{active: filterService.isPartOfActive(event)}" ng-animate="{enter: 'animate-enter'}">
+
+
+               <div class="span3">
+
+                  <div class="event">                 
+                     <div class="imagebox minopt">
+                        
+                        <img ng-src="images/vendor/summerstage/events/{{event.id}}.jpg">
+
+                     </div>
+         
+                     <div class="datetime">
+                        <span class="date" style="font-weight: bold">{{event.start_time | readableDate}}</span> 
+                        {{[event.start_time, event.end_time] | scheduledTimeMinimal }}
+                     </div>
+
+
+                     <a ng-href="/#/events/{{event.id}}"> 
+                        {{event.short_name}}  
+                     </a>
+
+
+                      <div class="category"><em>{{event.category}} {{event.sub_category}}</em></div>
+                  </div> <!--event-->
+               </div> <!--span3-->
+
+            </div> <!-- isotopegrid-->
+      </div> <!-- calendar -->
+   </div> <!--inner row-->
+
+
+   </section> <!--span9-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <section class="span3">
+
+
+
+
+
+
+
+   <h4>Testing</h4>
+
+
+ <label ng-repeat="tFilter in testFilters">
+    <input
+      type="checkbox"
+      ng-model="tFilter.checked"
+    >
+
+    <span>{{tFilter.name}}</span>
+  </label>
+
+
+
+
+
+   <h4>Sort</h4>
+   <select ng-model="orderProp">
+     <option value="name">Alphabetical</option>
+     <option value="start_time">Newest</option>
+   </select>
+
+
+   <h4>Filters</h4>
+
+
+
+
+   <div class="button" ng-click="resetFilters()"><strong>Reset</strong></div>
+
+<!-- deal with this later -->
+   <div ng-repeat="(filter_type, filter_names) in filterService.filterSets">
+      <p><b>{{filter_type}}</b></p>
+         <div ng-repeat="filter_name in filter_names">
+            <input type="checkbox" name="{{filter_type}}" ng-click="filterToggle(filter_name, filter_type)" value="{{filter_name}}">{{filter_name}}</input> 
+         </div>   
+   </div>
+<!-- x -->
+
+<!-- 
+   <div ng-repeat="(filter_type, filter_names) in filterService.filterSets">
+      <p><b>{{filter_type}}</b></p>
+      <ul class="filters">
+         <li ng-repeat="filter_name in filter_names" ng-click="filterToggle(filter_name, filter_type)">
+            <span ng-class="{active: isActiveControl(filter_name, filter_type)}">{{filter_name}}</span>
+         </li>
+         
+      </ul>
+   </div>
+-->
+   </section> <!--span4-->
+
+</div>
+
+   
+
