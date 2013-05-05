@@ -2,7 +2,7 @@
 
 window._DATA_PATH = '/data-hold'
 
-angular.module('summerstagehandApp', ['ngResource'])
+angular.module('summerstagehandApp', ['ngResource', 'ngSanitize'])
   .config ($routeProvider) ->
     $routeProvider
       .when '/',

@@ -41,9 +41,8 @@ angular.module('summerstagehandApp')
 			return false if !filterService.hasAnyFiltersSet()
 			filterService.isActiveInFilterSet(f_name, f_type)
 
-		$scope.refreshCalendar = (data) ->
+		$scope.events = summerStageEvents.get( {}, (data) ->
 			$scope.events = data
-#			for event, idx in $scope.events  TODO: make this read from attributes
 			$scope.filterService.facetPluck $scope.events, 'categories'#, 'dropdown'
 			$scope.filterService.facetPluck $scope.events, 'borough'#, 'dropdown'
 			$scope.filterService.facetPluck $scope.events, 'features'#, 'checkbox'
@@ -53,10 +52,9 @@ angular.module('summerstagehandApp')
 
 			$scope.checkBoxes << $scope.filterService # todo!!!
 
-		summerStageEvents.gofetch($scope.refreshCalendar) # get events, fills $scope.events
+			)
 
-#		$scope.$watch $scope.events, () ->
-#			console.log "HEY: #{$scope.events.length}"
+
 
 
 ]

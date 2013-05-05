@@ -1,8 +1,5 @@
 <p style="color:blue">This is the calendar view.</p>
 
-<div>
-	<h2>Datepicker</h2>
-</div>
 
 
 <div class="row">
@@ -10,28 +7,51 @@
 
 		<h3>Calendar</h3>
 
+		<div class="row">
+
 		<div class="calendar">
-			<div isotope-item ng-repeat="event in events | orderBy:orderProp " class="item event" ng-class="{active: filterService.isPartOfActive(event)}" ng-animate="{enter: 'animate-enter'}">
-
-				<div class="imagebox minopt"></div>
-	
-			    <div class="datetime">
-			    	<span class="date" style="font-weight: bold">{{event.start_time | readableDate}}</span> 
-			    	{{[event.start_time, event.end_time] | scheduledTimeMinimal }}
-			    </div>
+				<div isotope-item ng-repeat="event in events | orderBy:orderProp " class="item" ng-class="{active: filterService.isPartOfActive(event)}" ng-animate="{enter: 'animate-enter'}">
 
 
-			   <a ng-href="/#/events/{{event.id}}"> 
-			  		{{event.short_name}}  
-			  	</a>
+					<div class="span3">
+
+						<div class="event">						
+							<div class="imagebox minopt">&nbsp;</div>
+			
+					 	   <div class="datetime">
+						    	<span class="date" style="font-weight: bold">{{event.start_time | readableDate}}</span> 
+						    	{{[event.start_time, event.end_time] | scheduledTimeMinimal }}
+					    	</div>
 
 
-			    <div class="category"><em>{{event.category}} {{event.sub_category}}</em></div>
-			</div>
+						   <a ng-href="/#/events/{{event.id}}"> 
+						  		{{event.short_name}}  
+						  	</a>
+
+
+						    <div class="category"><em>{{event.category}} {{event.sub_category}}</em></div>
+						</div> <!--event-->
+					</div> <!--span3-->
+
+				</div> <!-- isotopegrid-->
 		</div> <!-- calendar -->
+	</div> <!--inner row-->
 
 
-	</section> <!--span8-->
+	</section> <!--span9-->
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<section class="span3">
 

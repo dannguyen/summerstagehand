@@ -11,11 +11,11 @@ describe 'Filter: time strings', () ->
     tfit.timeStringy = $filter 'timeStringy'
     tfit.readableDate = $filter 'readableDate'
     tfit.scheduledTimeMinimal = $filter 'scheduledTimeMinimal'
-    tfit.filterParagraphs = $filter 'filterParagraphs'
+    tfit.convertParagraphs = $filter 'convertParagraphs'
 
 
   it 'should filter paragraphs', () ->
-    expect(tfit.filterParagraphs "hello\nworld").toBe "<p>hello</p><p>world</p>"
+    expect(tfit.convertParagraphs "hello\nworld").toBe "<p>hello</p><p>world</p>"
 
 
   it 'should return a properly formatted standard time', () ->

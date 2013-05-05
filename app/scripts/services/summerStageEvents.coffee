@@ -3,7 +3,7 @@
 
 yoapp = angular.module('summerstagehandApp')
 
-
+###
 yoapp.service 'summerStageEvents', ['$http', ($http) ->
 	  	event_array = []
 	  	categories = []
@@ -21,19 +21,29 @@ yoapp.service 'summerStageEvents', ['$http', ($http) ->
 	   		success_foo(event_array) if success_foo?
 
 ]
+###
+
+yoapp.factory 'summerStageEvents', ['$resource', ($resource) ->
+   
+      $resource( "#{_DATA_PATH}/events/all.json", 
+         {}, {get:
+               method: 'GET'
+               isArray: true
+            }
+         )
+
+]
+
 
 
 yoapp.factory 'SummerEvent', ['$resource', ($resource) ->
 
-	 $resource("#{_DATA_PATH}/events/:eventId.json", {}, {
-	 	query:
-	 		method: 'GET'
-	 		params:
-	 			eventId: 'events'
-	 		isArray: true
-
-	 })
-
+   $resource( "#{_DATA_PATH}/events/:eventId.json", 
+      {}, {query:
+       		method: 'GET'
+       		isArray: false
+         }
+      )
 ]
 
 

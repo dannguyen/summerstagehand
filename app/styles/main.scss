@@ -18,14 +18,13 @@ ul.filters{
 }
 
 .calendar .event{
-	padding: 10px;
-	margin-bottom: 12px;
-	width: 200px;
 
+	margin-bottom: 12px;
+	padding: 2px;
 	.imagebox{
 		height: 120px;
-		width: 200px;
-		padding: 1px;
+		width: 100%;
+		min-width: 200px;
 		border: thin solid #888;
 	}
 

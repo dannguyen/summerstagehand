@@ -1,43 +1,51 @@
 
 <a href="/#/calendar">Calendar</a>
 
-		<h3>{{event.name}}</h3>
 
 
-<div class="row">
+<div class="event" >
 
-	
+	<h3>{{event.name}}</h3>
 
-	<div class="span8">
 
-		<section>
-			<div>
-				{{event.start_time}}
-			</div>
-			<div>
-				{{event.place_name}}
-			</div>
+	<div class="row">	
 
-			<div>{{event.description | filterParagraphs }}</div>
-		</section> <!--frontmatter-->
+		<div class="span8">
 
-		<section>
-			<h4>More about the Place</h4>
-		</section>
+			<section>
+				<div>
+					{{[event.start_time, event.end_time] | standardTimeMinimal}}
+				</div>
 
-		<section>
-			<h4>Related events</h4>
-		</section>
 
-	</div>
-	<div class="span4">
-		
-		<div class="imgwrap" style="height:250px; background: #aaa;" ng-animate="{enter: 'animate-enter'}">Why isn't this animating?&nbsp;</div>
+				<div>
+					{{event.place_name }}
+				</div>
 
-	</div>
+				<div ng-bind-html="event.description | convertParagraphs">
+
+				</div>
+
+			</section> 
+			<!--frontmatter-->
+
+			<section>
+				<h4>More about the Place</h4>
+			</section>
+
+			<section>
+				<h4>Related events</h4>
+			</section>
+
+		</div>
+		<div class="span4">
+			
+			<div class="imgwrap" style="height:250px; background: #aaa;" ng-animate="{enter: 'animate-enter'}">Why isn't this animating?&nbsp;</div>
+
+		</div>
+	</div> <!-- row -->
+
 </div>
-
-
 
 
 

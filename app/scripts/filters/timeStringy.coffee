@@ -2,9 +2,12 @@
 
 angular.module('summerstagehandApp')
 
-	.filter 'filterParagraphs', () ->
+	.filter 'convertParagraphs', () ->
 		(txt) ->
 			# converts new lines into paragraph wraps
+
+			return "" unless txt?
+
 			arr = _.map (txt.split("\n")), (p) -> 
 				"<p>#{p}</p>"
 			arr.join("")
@@ -26,9 +29,9 @@ angular.module('summerstagehandApp')
 		(datestr) ->
 			m = moment(datestr)
 			if m.format('MMMM').length > 4
-				m.format "dddd, MMM. D"	
+				m.format "MMM. D, dddd"	
 			else
-				m.format "dddd, MMMM D"
+				m.format "MMMM D, dddd"
 
 	.filter 'scheduledTimeMinimal', () ->
 		(date_arr) ->
@@ -46,4 +49,11 @@ angular.module('summerstagehandApp')
 			# remove zero minutes
 			full_time_str = full_time_str.replace(/:00/g, '')
 
+	# do both readable and scheduled
+	.filter 'standardTimeMinimal', ($filter) ->
+		(date_arr) ->
+			day = $filter('readableDate')(date_arr[0])
+			range = $filter('scheduledTimeMinimal')(date_arr)
+
+			"#{day} #{range}"
 
