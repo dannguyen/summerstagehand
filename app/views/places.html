@@ -1,1 +1,8 @@
-<p>This is the places view.</p>
+<h1>Venues</h1>
+
+
+<div ng-repeat="place in places" ng-animate="{enter: 'animate-enter'}">
+	<strong>Place:</strong> <a ng-href="/#/places/{{place.id}}">{{place.name}}</a>
+
+
+</div>

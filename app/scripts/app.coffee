@@ -11,10 +11,6 @@ angular.module('summerstagehandApp', ['ngResource', 'ngSanitize'])
       .when '/calendar',
         templateUrl: 'views/calendar.html',
         controller: 'CalendarCtrl'
-#        resolve: 
-#          events: (summerStageEvents) ->
-#            console.log("resolving somethin")
-#            summerStageEvents.gofetch() # get events, fills $scope.events
       .when '/videos',
         templateUrl: 'views/videos.html'
         controller: 'VideosCtrl'
@@ -29,6 +25,10 @@ angular.module('summerstagehandApp', ['ngResource', 'ngSanitize'])
       .when '/places',
         templateUrl: 'views/places.html',
         controller: 'PlacesCtrl'
+      .when '/places/:placeId',
+        templateUrl: 'views/place-detail.html',
+        controller: 'PlacesCtrl'
+
       .otherwise
         redirectTo: '/'
 
