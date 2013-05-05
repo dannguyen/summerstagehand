@@ -3,7 +3,7 @@
 describe 'Filter: time strings', () ->
 
   # load the filter's module
-  beforeEach module 'summerstagehandApp'
+  beforeEach module 'summerstagehandApp', ['ngSanitize']
 
   # initialize a new instance of the filter before each test
   tfit = {}
@@ -26,11 +26,11 @@ describe 'Filter: time strings', () ->
   it 'should return a readableDate', () ->
 
     timeraw = "2013-04-07 12:00"    
-    expect(tfit.readableDate timeraw).toBe timestr = "Sunday, Apr. 7"
+    expect(tfit.readableDate timeraw).toBe timestr = "Apr. 7, Sunday"
 
     # no dot for June
     timeraw = "2013-06-01 12:00"
-    expect(tfit.readableDate timeraw).toBe "Saturday, June 1"
+    expect(tfit.readableDate timeraw).toBe "June 1, Saturday"
 
   it 'should return a minimum range', () ->
     t1 = "2013-06-01 15:00"

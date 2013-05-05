@@ -10,6 +10,7 @@ angular.module('summerstagehandApp')
 
 			arr = _.map (txt.split("\n")), (p) -> 
 				"<p>#{p}</p>"
+			console.log(arr.join("xx"))
 			arr.join("")
 
 	.filter 'timeStringy', () ->
