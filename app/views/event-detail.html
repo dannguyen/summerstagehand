@@ -69,12 +69,13 @@
 
 		<div class="span3">
 			&nbsp;
-			<div class="place" ng-show="placeDataReady"> 
-				<div class="imgwrap" style="height:250px; background: #aaa;" ng-animate="{enter: 'animate-enter'}">
+			<div class="place" ng-show="placeDataReady" ng-animate="{enter: 'animate-enter'}"> 
+				<h3>{{place.name}}</h3>
+
+				<div class="imgwrap" style="height:250px; background: #aaa;">
 					<img src="http://placekitten.com/220/250" alt="cat">
 				</div>
 	
-				<h3>{{place.name}}</h3>
 				
 				<div>
 					<a target="_map" href="{{[place.lat, place.lng] | googleMaps}}">See Google Maps</a>
@@ -86,7 +87,7 @@
 				<h4>Other events here</h4>
 
 				<ul>
-					<li ng-repeat="p_events in place.events" ng-animate="{enter: 'animate-enter'}">
+					<li ng-repeat="p_events in place.limited_events" ng-animate="{enter: 'animate-enter'}">
 						<a ng-href="/#/events/{{p_events.id}}">{{p_events.name}}</a>
 					</li>
 				</ul>

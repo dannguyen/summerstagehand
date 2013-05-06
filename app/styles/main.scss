@@ -173,3 +173,14 @@ img.fRight{
 	}
 
 }
+
+
+@media (max-width:480px) {
+	h1 { font-size: 1.3em} // ~38px
+	h2 { font-size: 1.25em; } // ~32px
+	h3 { font-size: 1.1em; } // ~24px
+	h4 { font-size: 1.05em; } // ~18px
+	h5 { font-size:  1.0em; }
+	h6 { font-size: 0.85em; } // ~12px
+
+}

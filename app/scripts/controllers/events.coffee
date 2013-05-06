@@ -5,7 +5,7 @@ yoapp = angular.module('summerstagehandApp')
 yoapp.controller 'EventsCtrl', ["$scope", "$routeParams", "SummerEvent", "summerStageEvents", "SummerStagePlace",  
 	($scope, $routeParams, SummerEvent, summerStageEvents, SummerStagePlace) ->
 
-         $scope.dataReady = false
+         $scope.eventsDataReady = false
 
 
          orderEventsData = (data) ->
@@ -14,7 +14,7 @@ yoapp.controller 'EventsCtrl', ["$scope", "$routeParams", "SummerEvent", "summer
 
          groupEventsData = (data) ->
             _.groupBy data, (ev) ->
-               moment(ev.start_time).startOf('week').format "MM/DD"
+               moment(ev.start_time).startOf('week').format "YYYY-MM-DD"
 
 
 
@@ -24,10 +24,16 @@ yoapp.controller 'EventsCtrl', ["$scope", "$routeParams", "SummerEvent", "summer
             $scope.place = SummerStagePlace.get({placeId: p_id}, (data) ->
                $scope.place = data.place
                $scope.placeDataReady = true
+
+
+               $scope.place.limited_events = _.reject $scope.place.events, (e) -> e == $scope.event 
+               $scope.place.limited_events = $scope.place.limited_events[0..5]
+
                )
 
 
          $scope.events = summerStageEvents.get( {}, (data) ->
+            $scope.eventsDataReady = true
             $scope.events = orderEventsData data
             $scope.groupedEvents = groupEventsData $scope.events
          

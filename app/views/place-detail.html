@@ -11,6 +11,13 @@
 
 		<div>
 			<strong>Events listing</strong>
+	
+			<div ng-repeat="event in place.events">
+				
+				<a ng-href="/#/events/{{event.id}}">{{event.name}}</a>
+				
+			</div>	
+
 		</div>
 
 		<div>See on a Google Map (lat,lng)</div>

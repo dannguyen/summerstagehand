@@ -34,6 +34,11 @@ angular.module('summerstagehandApp')
 		(date_arr) ->
 			moment(date_arr[0]).format("MM-DD") + " to " + moment(date_arr[1]).format("MM-DD")
 
+	.filter 'weekDisplay', () ->
+		(first_day) ->
+			"#{first_day} plus 7 days!"
+#			day1 = moment(first_date)
+
 	.filter 'timeRange', () ->
 		(date_arr) ->
 			moment(date_arr[0]).format("h a") + " to " + moment(date_arr[1]).format("h a")

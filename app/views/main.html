@@ -3,7 +3,8 @@
 		<h2>Upcoming</h2>
 
 		<div ng-repeat="event in events" class="item event" ng-animate="{enter: 'animate-enter'}">
-			{{event.name}}
+			
+			{{event.start_time | readableDate}} - <a ng-href="/#/events/{{event.id}}">{{event.name}}</a>
 		</div>	
 		<div>
 			See all <a href="/#/events">event listings</a>
@@ -15,11 +16,11 @@
 
 		<section ng-show="videoDataLoaded">
 
-			
+			<div>
 	       <a href="/#/videos/{{randomVideo.uid}}"> 
 	  			<img ng-src="{{randomVideo.thumbnail}}" alt="{{randomVideo.title}}">
 	        </a>
-
+			</div>
 		</section>
 
 		<section>

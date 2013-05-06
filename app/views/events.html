@@ -1,16 +1,18 @@
-<h2>Events</h2>
+<h1>SummerStage 2013 Events</h1>
 
-<div class="row">
 
 
    
+   <div class="loading" ng-hide="eventsDataReady" ng-animate="'fade'">
+      Data loading...
+   </div>
 
-   <section ng-repeat="(day, events) in groupedEvents" ng-animate="{enter: 'animate-enter'}">
+   <section ng-repeat="(day, events) in groupedEvents">
 
-      <h4>Week of {{day}}</h4>
+      <h4>{{day | weekDisplay}}</h4>
 
       <div class="row">
-         <div ng-repeat="event in events" ng-animate="{enter: 'animate-enter'}" class="span6">
+         <div ng-repeat="event in events" class="span6">
 
                <div class="tk-event">
 
@@ -66,4 +68,3 @@
 
     </section>  
 
-</div>

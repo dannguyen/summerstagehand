@@ -18,8 +18,11 @@ angular.module('summerstagehandApp')
 
       $scope.randomizeVideos = () ->
          $timeout( () ->
+            $scope.showRandomVideo = false
+
             $scope.randomVideo = $scope.videos[_.random($scope.videos.length)]
             $scope.randomizeVideos()
+            $scope.showRandomVideo = true
          , 1000
          )
 
