@@ -5,7 +5,9 @@ angular.module('summerstagehandApp')
     $resource( "#{_DATA_PATH}/videos/all.json", 
          {}, {get:
                method: 'GET'
-               isArray: true
+               isArray: true,
+               cache : true
+
             }
          )
   ]

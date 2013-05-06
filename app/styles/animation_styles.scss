@@ -4,11 +4,11 @@
  have provided within the ngAnimate attribute.
 */
 .animate-enter-setup {
- -webkit-transition: 0.5s ease-in all; /* Safari/Chrome */
- -moz-transition: 0.5s ease-in all; /* Firefox */
- -ms-transition: 0.5s ease-in all; /* IE10 */
- -o-transition: 0.5s ease-in all; /* Opera */
- transition: 0.5s ease-in all; /* Future Browsers */
+ -webkit-transition: 0.4s ease-out all; /* Safari/Chrome */
+ -moz-transition: 0.5s ease-out all; /* Firefox */
+ -ms-transition: 0.5s ease-out all; /* IE10 */
+ -o-transition: 0.5s ease-out all; /* Opera */
+ transition: 0.5s ease-out all; /* Future Browsers */
  
  /* The animation preparation code */
  opacity: 0;
@@ -52,57 +52,6 @@
 
   /* view the Github link for more CSS easing animations */
 }
-
-.fade-hide-setup, .fade-show-setup {
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-}
-
-.fade-hide-setup {
-  opacity:1;
-}
-.fade-hide-setup.fade-hide-start {
-  opacity:0;
-}
-
-.fade-show-setup {
-  opacity:0;
-}
-.fade-show-setup.fade-show-start {
-  opacity:1;
-}
-
-
-
-
-.fade-hide-setup, .fade-show-setup,
-.woz-hide-setup, .woz-show-setup {
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-}
-
-.fade-hide-setup,
-.woz-hide-setup {
-  opacity:1;
-}
-.fade-hide-setup.fade-hide-start,
-.woz-hide-setup.woz-hide-start {
-  opacity:0;
-}
-
-.fade-show-setup,
-.woz-show-setup {
-  opacity:0;
-}
-.fade-show-setup.fade-show-start,
-.woz-show-setup.woz-show-start {
-  opacity:1;
-}
-
 
 
 

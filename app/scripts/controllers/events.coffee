@@ -2,8 +2,8 @@
 
 yoapp = angular.module('summerstagehandApp')
 
-yoapp.controller 'EventsCtrl', ["$scope", "$routeParams", "SummerEvent", "summerStageEvents"  
-	($scope, $routeParams, SummerEvent, summerStageEvents) ->
+yoapp.controller 'EventsCtrl', ["$scope", "$routeParams", "SummerEvent", "summerStageEvents", "SummerStagePlace",  
+	($scope, $routeParams, SummerEvent, summerStageEvents, SummerStagePlace) ->
 
          $scope.dataReady = false
 
@@ -18,6 +18,15 @@ yoapp.controller 'EventsCtrl', ["$scope", "$routeParams", "SummerEvent", "summer
 
 
 
+         loadPlace = (p_id) ->
+            $scope.placeDataReady = false
+            return unless p_id?
+            $scope.place = SummerStagePlace.get({placeId: p_id}, (data) ->
+               $scope.place = data.place
+               $scope.placeDataReady = true
+               )
+
+
          $scope.events = summerStageEvents.get( {}, (data) ->
             $scope.events = orderEventsData data
             $scope.groupedEvents = groupEventsData $scope.events
@@ -29,7 +38,9 @@ yoapp.controller 'EventsCtrl', ["$scope", "$routeParams", "SummerEvent", "summer
             $scope.event = SummerEvent.get({eventId: event_id}, (edata) ->
                $scope.event = edata.event
                $scope.dataReady = true
+               loadPlace($scope.event.place_id)
             )
+
 
 
 ]

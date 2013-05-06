@@ -5,33 +5,66 @@
 
 <div class="event" >
 
-	<h3>{{event.name}}</h3>
+	
 
 
 	<div class="row">	
 
-		<div class="span8">
+		<div class="span9">
+
+			<h1>{{event.name}}</h1>
 
 			<section>
-				<div>
-					{{[event.start_time, event.end_time] | standardTimeMinimal}}
-				</div>
 
 
-				<div>
-					{{event.place_name }}
-				</div>
-				<div><a ng-href="event.homepage_url">Event Url</a></div>
+
+			<div class="row event-info"> 
+
+					<div class="span3">
+						<div class="sked">
+							<div class="date">
+								{{event.start_time | fullDate}}
+							</div>
+							<div class="time">
+								{{[event.start_time, event.end_time] | scheduledTimeMinimal}}
+							</div>
+						</div>
+					</div> <!--span4-->						
+					<div class="span3">
+						<div class="sked">						
+							<div>
+								<a href="/#/places/{{event.place_id}}">{{event.place_name }}</a>
+							</div>
+							<div>
+								{{event.borough }}
+							</div>
+						</div>	
+					</div>	
+
+					<div class="span3">
+						<div><a ng-href="{{event.homepage_url}}">Event Listing on UPlanMe</a></div>							
+
+					</div>
+
+			</div> <!--event-info-->
+
+
+				
+			<div class="description">
+				<h4>Description</h4>
+
+
+				<img class="fRight" ng-src="{{event.image_url}}" alt="">
 
 				<div ng-bind-html="event.description | convertParagraphs">
-
 				</div>
+			</div>
 
 			</section> 
 			<!--frontmatter-->
 
 			<section>
-				<h4>More about the Place</h4>
+				<h4>Information about {{event.place_name}}</h4>
 			</section>
 
 			<section>
@@ -39,9 +72,17 @@
 			</section>
 
 		</div>
-		<div class="span4">
-			
-			<div class="imgwrap" style="height:250px; background: #aaa;" ng-animate="{enter: 'animate-enter'}">Why isn't this animating?&nbsp;</div>
+
+		<div class="span3">
+			&nbsp;
+			<div class="place" ng-show="placeDataReady"> 
+				<div class="imgwrap" style="height:250px; background: #aaa;" ng-animate="{enter: 'animate-enter'}">
+					<img src="http://placekitten.com/220/250" alt="cat">
+				</div>
+	
+				<h3>{{place.name}}</h3>
+
+			</div>
 
 		</div>
 	</div> <!-- row -->

@@ -3,7 +3,7 @@
 <p>This is the videos view.</p>
 
 
-<section class="row">
+<section class="row" ng-show="dataReady">
    <div ng-repeat="video in videos" ng-animate="{enter: 'animate-enter'}">   
       <video-stub  class="span4">hey</video-stub>   
    </div>

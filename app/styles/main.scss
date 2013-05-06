@@ -4,6 +4,8 @@
 @import "animation_styles";
 @import "video_styles";
 
+
+
 ul.filters{
 	li{ 
 		cursor: pointer;
@@ -105,6 +107,20 @@ header.banner{
 			height: auto;
 
 	}
+
+}
+
+.sked{
+	border-right: thin solid #bbb;
+}
+.event-info{
+	font-size: 1.0em;
+	line-height: 1.0em;
+}
+
+img.fRight{
+	float: right;
+	margin: 0 0 12px 12px;
 
 }
 

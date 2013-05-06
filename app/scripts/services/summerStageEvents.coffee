@@ -28,7 +28,9 @@ yoapp.factory 'summerStageEvents', ['$resource', ($resource) ->
       $resource( "#{_DATA_PATH}/events/all.json", 
          {}, {get:
                method: 'GET'
-               isArray: true
+               isArray: true,
+               cache : true
+
             }
          )
 
