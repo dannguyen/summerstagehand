@@ -86,9 +86,11 @@
 				</div>				
 				<h4>Other events here</h4>
 
-				<ul>
-					<li ng-repeat="p_events in place.limited_events" ng-animate="{enter: 'animate-enter'}">
-						<a ng-href="/#/events/{{p_events.id}}">{{p_events.name}}</a>
+				<ul class="unstyled">
+					<li ng-repeat="p_event in place.limited_events" ng-animate="{enter: 'animate-enter'}">
+						{{p_event.start_time | readableDate}}
+						<br>
+						<a ng-href="/#/events/{{p_event.id}}">{{p_event.name}}</a>
 					</li>
 				</ul>
 

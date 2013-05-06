@@ -32,8 +32,8 @@
 <div class="row">
                         <div class="span2">
                            <div class="datetime">
+                             <span class="date">{{event.start_time | readableDate}}</span>,  
                              {{[event.start_time, event.end_time] | scheduledTimeMinimal }}
-                             <span class="date" style="font-weight: bold">{{event.start_time | readableDate}}</span> 
                              
                           </div>
   
@@ -45,11 +45,10 @@
 
 </div>
 
-                          <div class="category"><em>{{event.category}} {{event.sub_category}}</em></div>
   
    
                           
-  
+                           <em>{{event.category}}</em>: 
                           <a ng-href="/#/events/{{event.id}}"> 
                              {{event.short_name}}  
                           </a>
