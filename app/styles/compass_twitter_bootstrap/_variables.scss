@@ -32,14 +32,14 @@ $purple:                #7a43b6 !default;
 
 // Scaffolding
 // -------------------------
-$bodyBackground:        $white !default;
-$textColor:             $grayDark !default;
+$bodyBackground:        $grayDarker !default;
+$textColor:             $white !default;
 
 
 // Links
 // -------------------------
-$linkColor:             #08c !default;
-$linkColorHover:        darken($linkColor, 15%) !default;
+$linkColor:             #09d !default;
+$linkColorHover:        lighten($linkColor, 15%) !default;
 
 
 // Typography
@@ -55,7 +55,7 @@ $altFontFamily:         $serifFontFamily !default;
 
 $headingsFontFamily:    inherit; // empty to use BS default, $baseFontFamily
 $headingsFontWeight:    bold;    // instead of browser default, bold
-$headingsColor:         inherit; // empty to use BS default, $textColor
+$headingsColor:         darken($textColor, 5%); // empty to use BS default, $textColor
 
 
 // Component sizing

@@ -5,7 +5,9 @@
 @import "video_styles";
 
 
-
+h1{
+	margin-bottom: 1.0em;
+}
 ul.filters{
 	li{ 
 		cursor: pointer;
@@ -38,14 +40,23 @@ ul.filters{
 }
 
 
+
 /** main page */ 
 
 
 footer.footer{
 	padding: 1.5em 0;
 	margin-top: 2.0em;
-	background: #222;
+	background: $black;
 	min-height: 150px;
+
+	@media (max-width: 767px) {		
+			margin-left: -20px;
+			margin-right: -20px;
+			padding: 0.5em 20px;
+
+
+	}
 
 }
 
@@ -59,6 +70,7 @@ footer.footer{
 }
 
 header.banner{
+	background: $black;
 	padding: 0.5em 0;
 	@media (max-width: 767px) {
 			padding: 0.5em 20px;
@@ -86,7 +98,6 @@ header.banner{
 
 	@media (max-width: 767px) {		
 			width: auto;
-
 	}
 
 }
@@ -100,12 +111,11 @@ header.banner{
 	margin-bottom: 18px;
 	height: 150px;
 	overflow: hidden;
-	background: white;
+	background: $bodyBackground;
 
 	@media (max-width: 480px) {		
 			width: auto;
 			height: auto;
-
 	}
 
 }
@@ -115,7 +125,7 @@ header.banner{
 }
 .event-info{
 	font-size: 1.0em;
-	line-height: 1.0em;
+	line-height: 1.3em;
 }
 
 img.fRight{
@@ -124,3 +134,23 @@ img.fRight{
 
 }
 
+.event-detail .description{
+	margin-top: 2.5em;
+}
+
+.navbar-inverse{
+	a.hilite, a:link.hilite, a:visited.hilite{
+		color: #dfd;
+	}
+}
+
+#videorama{
+
+	[class*="span"]{
+		margin-left:0;
+	}
+
+	.video .imgwrap{
+		border: 0;
+	}
+}

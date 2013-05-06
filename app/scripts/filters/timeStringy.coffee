@@ -17,6 +17,13 @@ angular.module('summerstagehandApp')
 			# converts to youtube video with unique vid identifier
 			"http://www.youtube.com/embed/#{vid}?rel=0&theme=light&autoplay=0"
 
+	.filter 'googleMaps', () ->
+		([lat,lng]) ->
+			"https://maps.google.com/maps?q=#{lat},#{lng}&hl=en&z=14"
+
+	.filter 'foursquareVenue', () ->
+		(fsq_id) ->
+			"https://foursquare.com/v/#{fsq_id}"
 
 	.filter 'timeStringy', () ->
    	(input) ->

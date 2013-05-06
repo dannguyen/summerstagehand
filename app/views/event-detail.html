@@ -1,9 +1,4 @@
-
-<a href="/#/calendar">Calendar</a>
-
-
-
-<div class="event" >
+<div class="event event-detail">
 
 	
 
@@ -51,7 +46,6 @@
 
 				
 			<div class="description">
-				<h4>Description</h4>
 
 
 				<img class="fRight" ng-src="{{event.image_url}}" alt="">
@@ -81,6 +75,22 @@
 				</div>
 	
 				<h3>{{place.name}}</h3>
+				
+				<div>
+					<a target="_map" href="{{[place.lat, place.lng] | googleMaps}}">See Google Maps</a>
+				</div>
+
+				<div>
+					<a target="_fsq" href="{{place.foursquare_canonical_id | foursquareVenue}}">Check-in on FourSquare</a>
+				</div>				
+				<h4>Other events here</h4>
+
+				<ul>
+					<li ng-repeat="p_events in place.events" ng-animate="{enter: 'animate-enter'}">
+						<a ng-href="/#/events/{{p_events.id}}">{{p_events.name}}</a>
+					</li>
+				</ul>
+
 
 			</div>
 
