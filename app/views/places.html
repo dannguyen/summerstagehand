@@ -1,12 +1,19 @@
+<div id="venues-list">
 <h1>Venues</h1>
+
+
+   <section ng-repeat="(borough,places) in boroughGroups" ng-animate="{enter: 'animate-enter'}" class="borough">
+
+          <h4>{{borough}}</h4>
 
 <div class="row">
 
-   <section ng-repeat="(borough,places) in boroughGroups" ng-animate="{enter: 'animate-enter'}" class="borough">
       
       <div class="span4">
-          <b>{{borough}}</b>
 
+         <div class="imgwrap">
+            <img ng-src="http://placekitten.com/300/200">
+         </div> 
       </div>
 
       <div class="span8">
@@ -14,18 +21,28 @@
              <div ng-repeat="place in places" ng-animate="{enter: 'animate-enter'}">   
 
                    <div class="span4">
+                     <div class="place">
                       <div>
-                         <a ng-href="/#/places/{{place.id}}">{{place.name}}</a> 
+                        <h5> <a ng-href="/#/places/{{place.id}}">{{place.name}}</a> </h5>
                       </div>
                       <div>
-                         Number of events: {{place.events_count}}
+                         {{place.address}}
                       </div>
+                      <div>
+                        <ng-pluralize count="place.events_count" when="{'0': '', 'one': '1 event', 'other': '{} events'}"></ng-pluralize>
+                      </div>
+                      <div>
+                        <strong>{{place.foursquare_check_ins}}</strong> FourSquare checkins                         
+                      </div>
+                   </div> <!--place-->
                    </div>
-
              </div>
+
          </div> <!--row--> 
       </div> 
 
+      </div> <!--row main-->
+
    </section> <!--borough-->
 
-</div> <!--row main-->
+</div>

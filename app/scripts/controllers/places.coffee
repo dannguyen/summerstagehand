@@ -7,7 +7,6 @@ angular.module('summerstagehandApp')
 			$scope.places = SummerStagePlaces.get( {}, (data) ->
 				$scope.places = data
 				$scope.boroughGroups = _.groupBy $scope.places, (p) -> p.borough
-				console.log ($scope.groupedPlaces)
 				)
 
 
