@@ -18,8 +18,14 @@ angular.module('summerstagehandApp')
 			"http://www.youtube.com/embed/#{vid}?rel=0&theme=light&autoplay=0"
 
 	.filter 'googleMaps', () ->
-		([lat,lng]) ->
-			"https://maps.google.com/maps?q=#{lat},#{lng}&hl=en&z=14"
+		(coords) ->
+			"https://maps.google.com/maps?q=#{coords[0]},#{coords[1]}&hl=en&z=14"
+
+	.filter 'googleStaticMap', () ->
+		(opts) ->
+			markers_str = _.map(opts.markers , (m) -> ("#{m.lat},#{m.lng}")).join('|')
+			"http://maps.googleapis.com/maps/api/staticmap?&markers=label:O|#{markers_str}&sensor=false&hl=en&z=14&size=#{opts.width}x#{opts.height}"
+
 
 	.filter 'foursquareVenue', () ->
 		(fsq_id) ->

@@ -76,6 +76,7 @@ footer.footer{
 }
 
 header.banner{
+	display:none;
 	background: $black;
 	padding: 0.5em 0;
 	@media (max-width: 767px) {

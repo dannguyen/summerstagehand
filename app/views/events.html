@@ -28,30 +28,28 @@
 
                        <div class="span4"> 
 
-              
-<div class="row">
-                        <div class="span2">
-                           <div class="datetime">
-                             <span class="date">{{event.start_time | readableDate}}</span>,  
-                             {{[event.start_time, event.end_time] | scheduledTimeMinimal }}
-                             
-                          </div>
-  
-                        </div>
-                        <div class="span2">
-                                                  <div class="place"><strong>{{event.borough}}</strong> / {{event.place_name}}</div>
-  
-                        </div>
-
-</div>
-
-  
-   
                           
                            <em>{{event.category}}</em>: 
                           <a ng-href="/#/events/{{event.id}}"> 
                              {{event.short_name}}  
                           </a>
+
+
+
+              
+                           <div class="datetime">
+                             <span class="date">{{event.start_time | readableDate}}</span>
+                             {{[event.start_time, event.end_time] | scheduledTimeMinimal }}
+                             
+                          </div>
+  
+                                                  <div class="place"><strong>{{event.borough}}</strong> / {{event.place_name}}</div>
+  
+ 
+</div>
+
+  
+   
                        
                        
                        </div> <!--span3 -->

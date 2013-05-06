@@ -27,4 +27,15 @@ angular.module('summerstagehandApp')
          )
 
 
+      $scope.addGoogleMap = (el_id, opts) ->
+      ###  
+         $scope.el_id = el_id
+         $scope.mapOptions = opts
+         # KRUFTY, TK
+
+         $scope.mapfoo = mapService.buildMap
+         google.maps.event.addDomListener(window, 'load', $scope.mapfoo);
+      ###
+      # add the map
+      # $scope.addGoogleMap('map-container')
 ]
