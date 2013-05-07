@@ -2,6 +2,7 @@ node_modules
 dist
 app/data-hold
 app/images/vendor
+app/images/remote
 .tmp
 .sass-cache
 app/components
