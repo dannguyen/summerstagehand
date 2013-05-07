@@ -253,7 +253,7 @@ module.exports = function (grunt) {
             '.htaccess',
 //            'components/**/*',
             'data-hold/**/*',
-            'images/{**/}*.{gif,webp}',
+            'images/**/*.{gif,webp,jpg,png}',
             'styles/fonts/*'
           ]
         }]

@@ -1,11 +1,16 @@
 'use strict'
 
 angular.module('summerstagehandApp')
-	.controller 'MainCtrl', ['$scope', 'summerStageEvents', 'SummerStageVideos', '$timeout', ($scope, summerStageEvents, SummerStageVideos, $timeout) ->
+	.controller 'MainCtrl', ['$scope', '$rootScope', 'summerStageEvents', 'SummerStageVideos', '$timeout', ($scope, $rootScope, summerStageEvents, SummerStageVideos, $timeout) ->
+
+
+
 
 		$scope.events = summerStageEvents.get( {}, (data) ->
          $scope.events = data[0..10]         
       )
+
+      $rootScope.noContainer = true
 
       $scope.videos = SummerStageVideos.get {}, (data) -> 
          $scope.videos = data

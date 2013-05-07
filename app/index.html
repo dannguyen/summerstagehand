@@ -30,44 +30,36 @@
 
 
 
-
-
-<div class="navbar navbar-inverse">
-  <div class="navbar-inner">
+<header class="banner">
    
     <div class="container">
-<button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-  <div class="nav-collapse">          
 
-    <div class="row">
+              <div class="logo"><a href="/">SUMMER<span style="color:green;">STAGE<span style="color:#39f">O</span>RAMA</span></a></div>
 
-    
-      <div class="span6">
-              <div class="logo"><a href="/">SUMMER<span style="color:green;">STAGEORAMA</span></a></div>
-    <div class="tagline">An unofficial video guide to NYC's summerlong festival</div>
+        
 
-
-      </div>
-
-      <div class="span6">
-        <ul class="nav">
-
-
-
-
-          <li><a href="#">Home</a></li>
-          <li><a class="" href="#/videos">Videorama</a></li>
+<div id="sub-banner">
+<div style="float: right" class="tagline">An unofficial video guide to NYC's summerlong festival</div>
+          
+<ul style="float: left" class="nav-list">
           <li><a href="#/events">Events</a></li>
           <li><a href="#/places">Venues</a></li>
+          <li><a class="" href="#/videos">Videorama</a></li>
+
+</ul>
+
+</div>
+<!--
+      <div class="span4">
+        <ul class="nav">
+          <li><a href="#/events">Events</a></li>
+          <li><a href="#/places">Venues</a></li>
+          <li><a class="" href="#/videos">Videorama</a></li>
+
         </ul>
-      </div>
 
 
-
+-->
 
 
 
@@ -79,19 +71,16 @@
 
   </div><!--container-->
 
-  </div>
-</div> <!-- navbar-->
 
 
-
-
+</header>
 
 
 
   
 
     <!-- Add your site or application content here -->
-    <div class="container" ng-view></div>
+    <div ng-class="{container: !!!noContainer}" ng-view></div>
 
 
 

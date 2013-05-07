@@ -24,8 +24,9 @@ angular.module('summerstagehandApp')
 
 	.filter 'googleStaticMap', () ->
 		(opts) ->
+			z = opts.z || 13
 			markers_str = _.map(opts.markers , (m) -> ("#{m.lat},#{m.lng}")).join('|')
-			"http://maps.googleapis.com/maps/api/staticmap?&markers=label:O|#{markers_str}&sensor=false&hl=en&z=14&size=#{opts.width}x#{opts.height}"
+			"http://maps.googleapis.com/maps/api/staticmap?&markers=label:O|#{markers_str}&sensor=false&hl=en&zoom=#{z}&size=#{opts.w}x#{opts.h}"
 
 
 	.filter 'foursquareVenue', () ->
@@ -35,6 +36,10 @@ angular.module('summerstagehandApp')
 	.filter 'timeStringy', () ->
    	(input) ->
       	moment(input).format("YYYY-MM-DD HH:mm")
+
+	.filter 'shortDate', () ->
+   	(input) ->
+      	moment(input).format("M/D")
 
    # input is array, [date1, date2]
 	.filter 'dateRange', () ->

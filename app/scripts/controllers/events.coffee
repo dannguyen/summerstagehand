@@ -2,10 +2,11 @@
 
 yoapp = angular.module('summerstagehandApp')
 
-yoapp.controller 'EventsCtrl', ["$scope", "$routeParams", "SummerEvent", "summerStageEvents", "SummerStagePlace",  
-	($scope, $routeParams, SummerEvent, summerStageEvents, SummerStagePlace) ->
+yoapp.controller 'EventsCtrl', ["$scope", "$routeParams", "SummerEvent", "summerStageEvents", "SummerStagePlace", "$rootScope", 
+	($scope, $routeParams, SummerEvent, summerStageEvents, SummerStagePlace, $rootScope) ->
 
          $scope.eventsDataReady = false
+         $rootScope.noContainer = false 
 
          $scope.filterService = { activeFilters: {} }
          $scope.theCategory = ""
@@ -34,12 +35,7 @@ yoapp.controller 'EventsCtrl', ["$scope", "$routeParams", "SummerEvent", "summer
                )
 
 
-         $scope.events = summerStageEvents.get( {}, (data) ->
-            $scope.eventsDataReady = true
-            $scope.events = orderEventsData data
-            $scope.groupedEvents = groupEventsData $scope.events
          
-         )
 
          event_id = $routeParams.eventId
          if event_id?
@@ -48,6 +44,13 @@ yoapp.controller 'EventsCtrl', ["$scope", "$routeParams", "SummerEvent", "summer
                $scope.dataReady = true
                loadPlace($scope.event.place_id)
             )
+         else
+            $scope.events = summerStageEvents.get( {}, (data) ->
+               $scope.eventsDataReady = true
+               $scope.events = orderEventsData data
+               $scope.groupedEvents = groupEventsData $scope.events
+            
+            )   
 
 
 

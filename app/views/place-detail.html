@@ -1,8 +1,33 @@
 
-<a href="/#/places">Venues</a>
+
+<div class="ledeo" ng-show="{{!!!place.image_url}}">
+	<img  class="ledeo" src="/images/remote/places/big/{{place.image_url}}">
+
+	<div class="sub-ledeo">
+		<div class="container">
+			<p><em>TK PHOTO BY{{place.remote_photo_caption}}</em></p>
+			<h1>{{place.name}}
+					
+				in 
+				
+				{{place.borough}}
+			</h1>
+		</div>
+	</div>	
+</div>
+
+
+<div class="container">
 <div class="place">
 
-	<h3>{{place.name}}</h3>
+	<section class="optional"  ng-hide="{{!!!place.image_url}}">
+			<h1>{{place.name}}
+					
+				<br>
+
+				{{place.borough}}
+			</h1>
+</section>
 
 	<section>
 		<div>
@@ -42,4 +67,4 @@
 </div>
 
 
-
+</div>

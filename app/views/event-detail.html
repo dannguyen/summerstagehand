@@ -7,7 +7,7 @@
 
 		<div class="span9">
 
-			<h1>{{event.name}}</h1>
+			<h1 class="title">{{event.name}}</h1>
 
 			<section>
 
@@ -100,26 +100,26 @@
 		<div class="span3">
 			&nbsp;
 			<div class="place" ng-show="placeDataReady" ng-animate="{enter: 'view-enter'}"> 
-				<h3>{{place.name}}</h3>
 
-				<div class="imgwrap" style="height:250px; background: #aaa;">
-					<img src="http://placehold.it/220x250" alt="cat">
+				<div class="imgwrap">
+
+					<img src="{{ {h:300, w:220, markers:[{lat: place.lat, lng:place.lng}]} | googleStaticMap }} ">
 				</div>
 	
-				
+								<div><a href="/#/places/{{place.id}}">{{place.name}}</a></div>
+
 				<div>
-					<a target="_map" href="{{[place.lat, place.lng] | googleMaps}}">See Google Maps</a>
+					<a target="_map" href="{{[place.lat, place.lng] | googleMaps}}">Google Maps</a>
 				</div>
 
 				<div>
-					<a target="_fsq" href="{{place.foursquare_canonical_id | foursquareVenue}}">Check-in on FourSquare</a>
+					<a target="_fsq" href="{{place.foursquare_canonical_id | foursquareVenue}}">Check-in on Foursquare</a>
 				</div>				
 				<h4>Other events here</h4>
 
-				<ul class="unstyled">
+				<ul class="unstyled agate">
 					<li ng-repeat="p_event in place.limited_events" ng-animate="{enter: 'view-enter'}">
-						{{p_event.start_time | readableDate}}
-						<br>
+						{{p_event.start_time | shortDate}}
 						<a ng-href="/#/events/{{p_event.id}}">{{p_event.name}}</a>
 					</li>
 				</ul>
