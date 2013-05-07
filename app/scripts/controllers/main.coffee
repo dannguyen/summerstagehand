@@ -19,6 +19,8 @@ angular.module('summerstagehandApp')
             $scope.randomVideos = []            
          else if $window.innerWidth < 780
             $scope.randomVideos = _.shuffle($scope.videos)[0..19]
+            
+            
             $scope.ramaSize = 'small'
          else
             $scope.randomVideos = _.shuffle($scope.videos)[0..29]

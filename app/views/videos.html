@@ -7,9 +7,8 @@
 
 <div class="clearfix" ng-class="ramaSize">
 
-   <div ng-repeat="video in videos" class="video">
-         <a ng-href="/#/videos/{{video.uid}}"><img src="{{video.thumbnail}}" alt="{{video.title}}"></a>
-   </div>   
+   <video-stub ng-repeat="video in videos"> 
+   </video-stub>   
 
 </div>
 </section>

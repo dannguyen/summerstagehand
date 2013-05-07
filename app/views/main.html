@@ -4,9 +4,7 @@
 
 <div class="clearfix" ng-class="ramaSize">
 
-	<div ng-repeat="video in randomVideos" class="video">
-			<a ng-href="/#/videos/{{video.uid}}"><img src="{{video.thumbnail}}" alt=""></a>
-	</div>	
+	<video-stub ng-repeat="video in randomVideos"></video-stub>	
 
 </div>
 </section>
