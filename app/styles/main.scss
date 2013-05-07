@@ -8,6 +8,16 @@
 h1{
 	margin-bottom: 1.0em;
 }
+
+
+.box{
+	margin-bottom: 1.5em;
+}
+
+.flex-video.box{
+	margin-bottom: 2.5em;
+}
+
 ul.filters{
 	li{ 
 		cursor: pointer;
@@ -76,7 +86,6 @@ footer.footer{
 }
 
 header.banner{
-	display:none;
 	background: $black;
 	padding: 0.5em 0;
 	@media (max-width: 767px) {
@@ -176,6 +185,12 @@ img.fRight{
 }
 
 
+.weekname{
+	padding-bottom: 3px;
+	margin-bottom: 1.0em;
+	border-bottom: 1px solid #777;
+}
+
 @media (max-width:480px) {
 	h1 { font-size: 1.3em} // ~38px
 	h2 { font-size: 1.25em; } // ~32px
@@ -183,5 +198,9 @@ img.fRight{
 	h4 { font-size: 1.05em; } // ~18px
 	h5 { font-size:  1.0em; }
 	h6 { font-size: 0.85em; } // ~12px
+
+	h1,h2,h3,h4,h5,h6{
+		line-height: 1.2em;
+	}
 
 }

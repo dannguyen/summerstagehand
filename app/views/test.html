@@ -1,17 +1,21 @@
 test.html
 
 
-<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, suscipit, inventore cupiditate fuga blanditiis eum placeat impedit tenetur dolores minima rem explicabo illum vitae ducimus reprehenderit animi dicta sed architecto.</div>
-<div>Deleniti, unde, corporis veniam error natus ipsum eum deserunt nesciunt fugit vero alias ullam blanditiis possimus pariatur nam excepturi quae quibusdam eligendi earum magni aut. Ad, cum porro sit nisi.</div>
-<div>Odit, quasi, quidem voluptates quae laboriosam harum qui officia et obcaecati vero earum minima accusantium ipsa a voluptatem pariatur optio fugiat asperiores quaerat velit consequuntur nobis tempora blanditiis voluptate culpa.</div>
-<div>Nisi, nemo, dolores maxime voluptatem excepturi dolorem corrupti natus quis quo cum voluptatibus debitis eius assumenda consequatur soluta obcaecati itaque optio quasi. Praesentium, in voluptatum expedita iste quam facilis molestias!</div>
+<div class="row">
+
+<div class="span3 hilite">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, suscipit, inventore cupiditate fuga blanditiis eum placeat impedit tenetur dolores minima rem explicabo illum vitae ducimus reprehenderit animi dicta sed architecto.</div>
+<div class='span3'>Deleniti, unde, corporis veniam error natus ipsum eum deserunt nesciunt fugit vero alias ullam blanditiis possimus pariatur nam excepturi quae quibusdam eligendi earum magni aut. Ad, cum porro sit nisi.</div>
+<div class="span3">Odit, quasi, quidem voluptates quae laboriosam harum qui officia et obcaecati vero earum minima accusantium ipsa a voluptatem pariatur optio fugiat asperiores quaerat velit consequuntur nobis tempora blanditiis voluptate culpa.</div>
+<div class="span3">Nisi, nemo, dolores maxime voluptatem excepturi dolorem corrupti natus quis quo cum voluptatibus debitis eius assumenda consequatur soluta obcaecati itaque optio quasi. Praesentium, in voluptatum expedita iste quam facilis molestias!</div>
+   
+
+</div>
+
 
 <div>
    
-&markers=size:tiny%7Ccolor:green%7CDelta+Junction,AK
-<h5>MAP</h5>
+<h5 ng-mouseover='testFoo("hey")'>MAP</h5>
 
-http://maps.googleapis.com/maps/api/staticmap?center=New+York,NY&zoom=13&size=600x300&key=API_console_key
 
 <img src="{{ {height: 400, width:400, markers: [{lat:40.714728, lng:-73.998672}] } | googleStaticMap  }}" />
 
@@ -19,7 +23,8 @@ http://maps.googleapis.com/maps/api/staticmap?center=New+York,NY&zoom=13&size=60
 
 <br>
 </div>
-<div>Distinctio, blanditiis, aliquid, soluta nesciunt atque tenetur doloremque reprehenderit possimus provident at quasi et mollitia minima est inventore earum consequuntur sapiente sed quos illum iure porro dolorum. Natus, atque, neque.</div>
+
+<div ng-hover="dorun()">Distinctio, blanditiis, aliquid, soluta nesciunt atque tenetur doloremque reprehenderit possimus provident at quasi et mollitia minima est inventore earum consequuntur sapiente sed quos illum iure porro dolorum. Natus, atque, neque.</div>
 <div>Voluptate, eos, accusantium, ipsum, minima culpa similique praesentium cumque repellat dolor modi autem cupiditate quas natus ad perspiciatis ducimus ullam unde quasi explicabo ab obcaecati suscipit esse nemo. Mollitia, excepturi.</div>
 <div>Adipisci, perferendis, at, minus sed a earum sint unde quis quo sunt animi doloribus tenetur officia. Ad, facere iste animi reiciendis. Possimus quod earum eos at ipsa nobis aut quis.</div>
 <div>Maiores, ut amet assumenda inventore ducimus asperiores in nulla consequatur necessitatibus nam. Molestias, veritatis, quasi, pariatur voluptas minus delectus reprehenderit provident iste odio iusto illo quis ad culpa sint nemo.</div>

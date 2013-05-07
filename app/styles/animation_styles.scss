@@ -119,3 +119,34 @@
 }
 
 /* End: Recommended Isotope styles */
+
+
+
+
+.view-enter-setup, .view-leave-setup {
+   -webkit-transition: 0.3s ease-out all; /* Safari/Chrome */
+ -moz-transition: 0.3s ease-out all; /* Firefox */
+ -ms-transition: 0.3s ease-out all; /* IE10 */
+ -o-transition: 0.3s ease-out all; /* Opera */
+ transition: 0.3s ease-out all; /* Future Browsers */
+}
+
+.view-enter-setup {
+  opacity:0;
+}
+.view-enter-setup.view-enter-start {
+  opacity:1;
+}
+
+
+
+.view-leave-setup {
+  transform: scale(1,1);  
+  -ms-transform: scale(1,1); /* IE 9 */
+  -webkit-transform: scale(1,1); /* Safari and Chrome */
+  opacity:1;
+}
+.view-leave-setup.view-leave-start {
+  opacity:0;
+
+}

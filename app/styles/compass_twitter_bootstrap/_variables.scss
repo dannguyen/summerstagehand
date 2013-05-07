@@ -38,7 +38,7 @@ $textColor:             $white !default;
 
 // Links
 // -------------------------
-$linkColor:             #09d !default;
+$linkColor:             #0be !default;
 $linkColorHover:        lighten($linkColor, 15%) !default;
 
 
@@ -54,8 +54,8 @@ $baseLineHeight:        20px !default;
 $altFontFamily:         $serifFontFamily !default;
 
 $headingsFontFamily:    inherit; // empty to use BS default, $baseFontFamily
-$headingsFontWeight:    bold;    // instead of browser default, bold
-$headingsColor:         darken($textColor, 5%); // empty to use BS default, $textColor
+$headingsFontWeight:    400;    // instead of browser default, bold
+$headingsColor:         darken($textColor, 10%); // empty to use BS default, $textColor
 
 
 // Component sizing

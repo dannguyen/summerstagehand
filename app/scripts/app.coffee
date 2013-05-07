@@ -6,9 +6,9 @@ angular.module('summerstagehandApp', ['ngResource', 'ngSanitize'])
   .config ($routeProvider) ->
     $routeProvider
       .when '/',
-        templateUrl: 'views/test.html'
-        controller: 'MainCtrl'
-      .when '/main',
+#        templateUrl: 'views/test.html'
+#        controller: 'MainCtrl'
+#      .when '/main',
         templateUrl: 'views/main.html'
         controller: 'MainCtrl'
       .when '/calendar',

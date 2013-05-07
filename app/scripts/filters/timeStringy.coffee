@@ -12,6 +12,7 @@ angular.module('summerstagehandApp')
 				"<p>#{p}</p>"
 			arr.join("")
 
+
 	.filter 'youtubeSrc', () ->
 		(vid) ->
 			# converts to youtube video with unique vid identifier
@@ -40,10 +41,29 @@ angular.module('summerstagehandApp')
 		(date_arr) ->
 			moment(date_arr[0]).format("MM-DD") + " to " + moment(date_arr[1]).format("MM-DD")
 
-	.filter 'weekDisplay', () ->
+	.filter 'plus6days', () -> # dont use
+		(monday) ->
+			day1 = moment(monday)
+			day2 = moment(day1).add('days', 6)
+
+			if day1.month() == day2.month()
+				"#{day1.format("MMMM D")} to #{day2.format("D")}"
+			else
+				"#{day1.format("MMMM D")} to #{day2.format("MMMM D")}"
+
+
+
+	.filter 'weekDisplay', () -> # dont use
 		(first_day) ->
-			"#{first_day} plus 7 days!"
-#			day1 = moment(first_date)
+			day1 = moment(first_day)
+			if day1.day() == 0
+				day1.subtract('weeks', 1).add('days', 1) # go back one week since we want to group sun with sat
+			else 
+				day1.startOf('week').add('days', 1)
+
+	#		day2 = day1.add('days', 6)
+			# terrible TK
+			"#{day1.format("MM DD")} to #{day1.add('days', 6).format("MM DD")}"
 
 	.filter 'timeRange', () ->
 		(date_arr) ->
@@ -85,5 +105,5 @@ angular.module('summerstagehandApp')
 			day = $filter('readableDate')(date_arr[0])
 			range = $filter('scheduledTimeMinimal')(date_arr)
 
-			"#{day} #{range}"
+			"#{day}, #{range}"
 

@@ -57,23 +57,53 @@
 			</section> 
 			<!--frontmatter-->
 
+
+
 			<section>
-				<h4>Information about {{event.place_name}}</h4>
+				<h4>Related videos</h4>
+
+				<div class="video-embed flex-video widescreen box" ng-repeat="video in event.youtube_videos">
+					
+					<iframe id="player-{{video.id}}" ng-src="{{video.uid | youtubeSrc}}" frameborder="0" allowfullscreen></iframe>					
+				</div>	
+
+
 			</section>
 
 			<section>
 				<h4>Related events</h4>
+
+				<div class="" ng-repeat="r_event in event.related_events">
+					
+
+                  
+
+                     <div class="datetime">
+                       {{ r_event.start_time | readableDate }}
+                      
+                  	  </div>
+
+
+
+                     <a ng-href="/#/r_events/{{r_event.id}}"> 
+                       {{r_event.name}}  
+                    </a>
+
+
+				</div>
+			
+		
 			</section>
 
 		</div>
 
 		<div class="span3">
 			&nbsp;
-			<div class="place" ng-show="placeDataReady" ng-animate="{enter: 'animate-enter'}"> 
+			<div class="place" ng-show="placeDataReady" ng-animate="{enter: 'view-enter'}"> 
 				<h3>{{place.name}}</h3>
 
 				<div class="imgwrap" style="height:250px; background: #aaa;">
-					<img src="http://placekitten.com/220/250" alt="cat">
+					<img src="http://placehold.it/220x250" alt="cat">
 				</div>
 	
 				
@@ -87,13 +117,14 @@
 				<h4>Other events here</h4>
 
 				<ul class="unstyled">
-					<li ng-repeat="p_event in place.limited_events" ng-animate="{enter: 'animate-enter'}">
+					<li ng-repeat="p_event in place.limited_events" ng-animate="{enter: 'view-enter'}">
 						{{p_event.start_time | readableDate}}
 						<br>
 						<a ng-href="/#/events/{{p_event.id}}">{{p_event.name}}</a>
 					</li>
 				</ul>
-
+				
+				<p>See all <a href="/#/places/{{place.id}}">events at {{place.name}}</a></p>
 
 			</div>
 

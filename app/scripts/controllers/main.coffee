@@ -12,7 +12,6 @@ angular.module('summerstagehandApp')
          $scope.videoDataLoaded = true
 
          $scope.randomVideo = $scope.videos[_.random($scope.videos.length)]
-         console.log($scope.randomVideo)
 
          $scope.randomizeVideos()
 
@@ -26,6 +25,8 @@ angular.module('summerstagehandApp')
          , 1000
          )
 
+      $scope.testFoo = (r) ->
+         console.log(r)
 
       $scope.addGoogleMap = (el_id, opts) ->
       ###  

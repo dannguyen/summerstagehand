@@ -7,6 +7,8 @@ yoapp.controller 'EventsCtrl', ["$scope", "$routeParams", "SummerEvent", "summer
 
          $scope.eventsDataReady = false
 
+         $scope.filterService = { activeFilters: {} }
+         $scope.theCategory = ""
 
          orderEventsData = (data) ->
             _.sortBy data, (ev) ->
@@ -14,7 +16,7 @@ yoapp.controller 'EventsCtrl', ["$scope", "$routeParams", "SummerEvent", "summer
 
          groupEventsData = (data) ->
             _.groupBy data, (ev) ->
-               moment(ev.start_time).startOf('week').format "YYYY-MM-DD"
+               moment(ev.start_time).subtract('days', 1).startOf('week').add('days', 1).format "YYYY-MM-DD"
 
 
 
