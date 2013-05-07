@@ -1,8 +1,15 @@
 
 
-<div ng-repeat="event in events" class="item event" style="float:left; width: 10%; min-width: 80px; height: 100px; background: #9ff; overflow:hidden;">
-xx			
-</div>	
+<section class="rama" ng-hide="randomVideos.length == 0">
+
+<div class="clearfix" ng-class="ramaSize">
+
+	<div ng-repeat="video in randomVideos" class="video">
+			<a ng-href="/#/videos/{{video.uid}}"><img src="{{video.thumbnail}}" alt=""></a>
+	</div>	
+
+</div>
+</section>
 
 
 <div class="container">
@@ -10,12 +17,14 @@ xx
 
 <div class="row">
 	<div class="span8">
-		<h2>Upcoming</h2>
-
-		<div ng-repeat="event in events" class="item event" ng-animate="{enter: 'animate-enter'}">
-			
-			{{event.start_time | readableDate}} - <a ng-href="/#/events/{{event.id}}">{{event.name}}</a>
-		</div>	
+		<h3>Upcoming</h3>
+<ul class="unstyled">
+			<li ng-repeat="event in events" class="item event" >
+				
+				{{event.start_time | readableDate}}  <a ng-href="/#/events/{{event.id}}">{{event.name}}</a>
+			</li>
+	
+			</ul>	
 		<div>
 			See all <a href="/#/events">event listings</a>
 		</div>
@@ -24,16 +33,8 @@ xx
 
 	<div class="span4">
 
-		<section ng-show="videoDataLoaded">
 
-			<div>
-	       <a href="/#/places"> 
-	  			<img src="/images/stageorama.jpg" alt="SummerStage">
-	        </a>
-			</div>
-		</section>
-
-		<section>
+		<section class="about">
 				<h4>About</h4>
 				<p>
 					<strong>STAGEORAMA</strong> was built by Dan Nguyen of Skift for the
@@ -42,6 +43,15 @@ xx
 					It is not officially endorsed by the
 					New York City Parks Foundation nor the SummerStageTK
 				</p>
+
+							<div>
+	       <a href="/#/places"> 
+	  			<img src="/images/stageorama.jpg" alt="SummerStage">
+	        </a>
+			</div>
+
+
+
 				<p>
 					The main reason I made this app was because I wanted a faster way to
 					look at the listings. Also, I don't know all of the musicians, so I wanted

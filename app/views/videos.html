@@ -1,11 +1,29 @@
+
+
+
 <div id="videorama">
 <h1>Videorama!</h1>
-<p>This is the videos view.</p>
+<section class="rama" ng-hide="randomVideos.length == 0"  ng-show="dataReady">
+
+<div class="clearfix" ng-class="ramaSize">
+
+   <div ng-repeat="video in videos" class="video">
+         <a ng-href="/#/videos/{{video.uid}}"><img src="{{video.thumbnail}}" alt="{{video.title}}"></a>
+   </div>   
+
+</div>
+</section>
 
 
+</div>
+
+
+
+<!-- 
 <section class="row " ng-show="dataReady">
    <div ng-repeat="video in videos"  class="video" style="width:10%; min-width: 80px; float: left">   
       <video-stub>Loading...</video-stub>   
    </div>
 </section>   
 </div>
+-->

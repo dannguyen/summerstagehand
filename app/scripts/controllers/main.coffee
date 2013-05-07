@@ -1,8 +1,7 @@
 'use strict'
 
 angular.module('summerstagehandApp')
-	.controller 'MainCtrl', ['$scope', '$rootScope', 'summerStageEvents', 'SummerStageVideos', '$timeout', ($scope, $rootScope, summerStageEvents, SummerStageVideos, $timeout) ->
-
+	.controller 'MainCtrl', ['$scope', '$rootScope', '$window', 'summerStageEvents', 'SummerStageVideos', '$timeout', ($scope, $rootScope, $window, summerStageEvents, SummerStageVideos, $timeout) ->
 
 
 
@@ -16,10 +15,21 @@ angular.module('summerstagehandApp')
          $scope.videos = data
          $scope.videoDataLoaded = true
 
-         $scope.randomVideo = $scope.videos[_.random($scope.videos.length)]
+         if $window.innerWidth < 500
+            $scope.randomVideos = []            
+         else if $window.innerWidth < 780
+            $scope.randomVideos = _.shuffle($scope.videos)[0..19]
+            $scope.ramaSize = 'small'
+         else
+            $scope.randomVideos = _.shuffle($scope.videos)[0..29]
+            $scope.ramaSize = 'large'
+]
 
-         $scope.randomizeVideos()
 
+#         $scope.randomVideo = $scope.videos[_.random($scope.videos.length)]
+
+#         $scope.randomizeVideos()
+###
       $scope.randomizeVideos = () ->
          $timeout( () ->
             $scope.showRandomVideo = false
@@ -32,16 +42,4 @@ angular.module('summerstagehandApp')
 
       $scope.testFoo = (r) ->
          console.log(r)
-
-      $scope.addGoogleMap = (el_id, opts) ->
-      ###  
-         $scope.el_id = el_id
-         $scope.mapOptions = opts
-         # KRUFTY, TK
-
-         $scope.mapfoo = mapService.buildMap
-         google.maps.event.addDomListener(window, 'load', $scope.mapfoo);
-      ###
-      # add the map
-      # $scope.addGoogleMap('map-container')
-]
+###
