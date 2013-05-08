@@ -1,15 +1,10 @@
 <div class="event event-detail">
 
 	
-
-
-	<div class="row">	
-
-		<div class="span9">
-
 			<h1 class="title">{{event.name}}</h1>
 
-			<section>
+
+
 
 
 
@@ -18,31 +13,48 @@
 					<div class="span3">
 						<div class="sked">
 							<div class="date">
-								{{event.start_time | fullDate}}
+								{{event.start_time | readableDate}}
 							</div>
 							<div class="time">
 								{{[event.start_time, event.end_time] | scheduledTimeMinimal}}
 							</div>
 						</div>
-					</div> <!--span4-->						
+					</div> <!--span4-->			
 					<div class="span3">
-						<div class="sked">						
-							<div>
-								<a href="/#/places/{{event.place_id}}">{{event.place_name }}</a>
-							</div>
-							<div>
-								{{event.borough }}
-							</div>
-						</div>	
-					</div>	
+												<div class="sked">						
 
-					<div class="span3">
+						<div><strong>Price:</strong> Free (TK)</div>
 						<div><a ng-href="{{event.homepage_url}}">Event Listing on UPlanMe</a></div>							
+												</div>	
 
 					</div>
 
+					<div class="span3">
+												<div class="sked">						
+
+						<div><strong>Price:</strong> Free (TK)</div>
+						<div><a ng-href="{{event.homepage_url}}">Event Listing on UPlanMe</a></div>							
+												</div>	
+
+					</div>
+			
+					<div class="span3">
+							<div>
+								{{event.borough }}
+							</div>
+							<div>
+								<a href="/#/places/{{event.place_id}}">{{event.place_name }}</a>
+							</div>
+						
+					</div>	
+
+
 			</div> <!--event-info-->
 
+
+	<div class="row">	
+
+		<div class="span9">
 
 				
 			<div class="description">
@@ -59,8 +71,8 @@
 
 
 
-			<section>
-				<h4>Related videos</h4>
+			<section ng-show="event.youtube_videos.length > 0" class="woz">
+				<h4>Videos</h4>
 
 				<div class="video-embed flex-video widescreen box" ng-repeat="video in event.youtube_videos">
 					
@@ -93,9 +105,11 @@
 				</div>
 			
 		
-			</section>
 
 		</div>
+
+
+
 
 		<div class="span3">
 			&nbsp;
@@ -115,7 +129,7 @@
 				<div>
 					<a target="_fsq" href="{{place.foursquare_canonical_id | foursquareVenue}}">Check-in on Foursquare</a>
 				</div>				
-				<h4>Other events here</h4>
+				<h5>More events here</h5>
 
 				<ul class="unstyled agate">
 					<li ng-repeat="p_event in place.limited_events" ng-animate="{enter: 'view-enter'}">

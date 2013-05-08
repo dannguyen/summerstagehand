@@ -1,39 +1,104 @@
 
 
-<section class="rama" ng-hide="randomVideos.length == 0">
+<div class="hotnav myhero">
+<section class="woz">
 
-<div class="clearfix" ng-class="ramaSize">
-
-	<video-stub ng-repeat="video in randomVideos"></video-stub>	
+		<div class="container">
+		
+		<div class="row">
+		
+	<a href="/#/events">		<div class="span4">
+								
+			
+							<img src="/images/remote/places/small/7.jpg" alt="Events">
+								<h2>EVENTS</h2>
+			
+				</div>
+			</a>
+			
+		<a href="/#/venues">
+									
+							<div class="span4">
+								<img src="/images/remote/places/small/3.jpg" alt="Venues">
+													<h2>VENUES</h2>
+							</div>
+				
+					
+				</a>
+		
+		
+		<a href="/#/videos">
+				<div class="span4">
+									
+									<img src="/images/remote/places/small/2.jpg" alt="Videorama">
+									<h2>VIDEORAMA</h2>
+				
+							</div>
+				
+				</a>
+			
+			</div>	
+		
+		</section>
+			
+		</div>
 
 </div>
-</section>
+
 
 
 <div class="container">
 
 
-<div class="row">
-	<div class="span8">
-		<h3>Upcoming</h3>
-<ul class="unstyled">
-			<li ng-repeat="event in events" class="item event" >
-				
+
+<section class="woz">
+		<div class="row" ng-repeat="event in events">
+
+
+
+
+			
+			<div class="span3">
 				{{event.start_time | readableDate}}  <a ng-href="/#/events/{{event.id}}">{{event.name}}</a>
-			</li>
-	
-			</ul>	
-		<div>
-			See all <a href="/#/events">event listings</a>
-		</div>
+			</div>
+
+				
 		
-	</div>
-
-	<div class="span4">
 
 
-		<section class="about">
-				<h4>About</h4>
+<div class="span3">
+				{{event.start_time | readableDate}}  <a ng-href="/#/events/{{event.id}}">{{event.name}}</a>
+			</div>
+
+<div class="span3">
+				{{event.start_time | readableDate}}  <a ng-href="/#/events/{{event.id}}">{{event.name}}</a>
+			</div>
+
+
+<div class="span3">
+				{{event.start_time | readableDate}}  <a ng-href="/#/events/{{event.id}}">{{event.name}}</a>
+			</div>
+
+
+		</div> <!--row-->
+
+
+</section>
+
+</div> <!--container-->
+
+
+<div class="myhero">
+
+<div class="container">
+<section class="woz">
+<div class="row">
+	
+	
+
+
+		<section class="about span6">
+				<h4>About SummerStageLove</h4>
 				<p>
 					<strong>STAGEORAMA</strong> was built by Dan Nguyen of Skift for the
 					<a href="http://hacksummerstage.com/">2013 Hack SummerStage Challenge</a>. 
@@ -42,7 +107,20 @@
 					New York City Parks Foundation nor the SummerStageTK
 				</p>
 
-							<div>
+
+				<p>
+I built this website because I wanted a fast simple way to see all the events that are scheduled this summer. But after doing that, I realized there were a lot of performers who I hadn't either seen or heard of before, so I used the YouTube API to discover shows that I might not have been interested in if I hadn't seen their TK performance. SummerStageLove contains more than 200x videos related to the shows here. I hope you find the information helpful in planning out your summer!</p>
+
+
+
+				<p>
+					So if you find this app useful, please consider voting for it in the Hack SummerStage Challenge.
+					If you have any questions/complaints, feel free to contact me on Twitter at @dancow or at my blog
+				</p>
+		</section>
+
+
+			<div class="span6">
 	       <a href="/#/places"> 
 	  			<img src="/images/stageorama.jpg" alt="SummerStage">
 	        </a>
@@ -50,31 +128,10 @@
 
 
 
-				<p>
-					The main reason I made this app was because I wanted a faster way to
-					look at the listings. Also, I don't know all of the musicians, so I wanted
-					a way to preview their work. <a href="/#/videos">STAGEORAMA has more than 100 hand-curated</a>
-					videos from participatin acts.
-				</p>
-				<p>
-					The second reason for this app was because I wanted to win the HackSummerStage
-					Challenge. There's no cash prize, but one of the TKperks is that
-					the winner will be "<em>acknowledged in stage announcements at every SummerStage show</em>,"
-					which means maybe someone will pronounce my last name, <a href="http://www.youtube.com/watch?v=32wBZwWFGT4">possibly like this</a>.
-
-				</p>
-				<p>
-					So if you find this app useful, please consider voting for it in the Hack SummerStage Challenge.
-					If you have any questions/complaints, feel free to contact me on Twitter at @dancow or at my blog
-				</p>
-		</section>
-
-		<section>
-				<h4>Features</h4>
-		</section>
-
-	</div> <!--span6-->
-</div> <!-- row -->
 
 
+</div>
+
+</section>
 </div> <!--container-->
+</div>

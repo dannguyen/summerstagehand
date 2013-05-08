@@ -1,13 +1,41 @@
 
 
 
-<div id="videorama">
-<h1>Videorama!</h1>
-<section class="rama" ng-hide="randomVideos.length == 0"  ng-show="dataReady">
+<section id="videorama">
+   
+<div class="container">
+   <h1>Videorama!</h1>
+
+   <div class="controls">
+
+  <select id="catComboBox" ng-model="theCategory">
+
+    <option value checked="checked">All</option>
+    <option ng-repeat="category in categories" value="{{category}}">      
+      {{category}}
+    </option>  
+  </select>    
+
+  
+  <p>
+     Sorted by: <a href="/#/videos">Event date</a> | <a href="/#/videos/sort/view_count">View count</a>
+
+  </p>
+   
+
+  </div>
+
+</section>
+
+
+<section class="rama woz" ng-hide="randomVideos.length == 0"  ng-show="dataReady">
+
+
 
 <div class="clearfix" ng-class="ramaSize">
 
-   <video-stub ng-repeat="video in videos"> 
+
+   <video-stub ng-repeat="video in videos  | filter:{category: theCategory }  "> 
    </video-stub>   
 
 </div>

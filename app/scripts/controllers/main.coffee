@@ -1,12 +1,13 @@
 'use strict'
 
 angular.module('summerstagehandApp')
-	.controller 'MainCtrl', ['$scope', '$rootScope', '$window', 'summerStageEvents', 'SummerStageVideos', '$timeout', ($scope, $rootScope, $window, summerStageEvents, SummerStageVideos, $timeout) ->
+	.controller 'MainCtrl', ['$scope', '$rootScope', '$window', 'featuredSummerStageEvents', 'SummerStageVideos', '$timeout', ($scope, $rootScope, $window, featuredSummerStageEvents, SummerStageVideos, $timeout) ->
 
 
 
-		$scope.events = summerStageEvents.get( {}, (data) ->
-         $scope.events = data[0..10]         
+		$scope.events = featuredSummerStageEvents.get( {}, (data) ->
+         console.log data.length
+         $scope.events = _.sortBy(_.shuffle( data)[0..5], 'start_time')         
       )
 
       $rootScope.noContainer = true

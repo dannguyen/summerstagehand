@@ -8,7 +8,7 @@ yoapp.controller 'EventsCtrl', ["$scope", "$routeParams", "SummerEvent", "summer
          $scope.eventsDataReady = false
          $rootScope.noContainer = false 
 
-         $scope.filterService = { activeFilters: {} }
+#         $scope.filterService = { activeFilters: {} }
          $scope.theCategory = ""
 
          orderEventsData = (data) ->
@@ -47,9 +47,14 @@ yoapp.controller 'EventsCtrl', ["$scope", "$routeParams", "SummerEvent", "summer
          else
             $scope.events = summerStageEvents.get( {}, (data) ->
                $scope.eventsDataReady = true
+
+
                $scope.events = orderEventsData data
+               $scope.categories = _.uniq(_.pluck( $scope.events, 'canonical_category'))
+               console.log $scope.categories 
+
                $scope.groupedEvents = groupEventsData $scope.events
-            
+           
             )   
 
 

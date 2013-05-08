@@ -14,6 +14,7 @@ $grayDarker:            #222 !default;
 $grayDark:              #333 !default;
 $gray:                  #555 !default;
 $grayLight:             #999 !default;
+$grayLighten:           #ccc !default;
 $grayLighter:           #eee !default;
 $white:                 #fff !default;
 
@@ -38,13 +39,13 @@ $textColor:             $white !default;
 
 // Links
 // -------------------------
-$linkColor:             #0be !default;
+$linkColor:             #0a5 !default;
 $linkColorHover:        lighten($linkColor, 15%) !default;
 
 
 // Typography
 // -------------------------
-$sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$sansFontFamily:        "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $serifFontFamily:       Georgia, "Times New Roman", Times, serif !default;
 $monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace !default;
 
@@ -53,8 +54,8 @@ $baseFontFamily:        $sansFontFamily !default;
 $baseLineHeight:        20px !default;
 $altFontFamily:         $serifFontFamily !default;
 
-$headingsFontFamily:    inherit; // empty to use BS default, $baseFontFamily
-$headingsFontWeight:    bold;    // instead of browser default, bold
+$headingsFontFamily:    "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif ; // empty to use BS default, $baseFontFamily
+$headingsFontWeight:    400;    // instead of browser default, bold
 $headingsColor:         darken($textColor, 5%); // empty to use BS default, $textColor
 
 

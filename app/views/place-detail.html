@@ -5,29 +5,27 @@
 
 	<div class="sub-ledeo">
 		<div class="container">
-			<p><em>TK PHOTO BY{{place.remote_photo_caption}}</em></p>
-			<h1>{{place.name}}
+			<p><em><a href="{{place.image_source_url}}">{{place.image_caption}}</a></em></p>
+					<h1>{{place.name}}</h1>
 					
-				in 
-				
-				{{place.borough}}
-			</h1>
+
+				<h2>{{place.borough}}</h2>
 		</div>
 	</div>	
 </div>
 
 
 <div class="container">
+
+<section class="woz">
 <div class="place">
 
 	<section class="optional"  ng-hide="{{!!!place.image_url}}">
-			<h1>{{place.name}}
+			<h1>{{place.name}}</h1>
 					
-				<br>
 
-				{{place.borough}}
-			</h1>
-</section>
+				<h2>{{place.borough}}</h2>
+	</section>
 
 	<section>
 		<div>
@@ -66,5 +64,5 @@
 
 </div>
 
-
+</section>
 </div>

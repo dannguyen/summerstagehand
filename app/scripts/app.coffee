@@ -17,6 +17,9 @@ angular.module('summerstagehandApp', ['ngResource', 'ngSanitize'])
       .when '/videos',
         templateUrl: 'views/videos.html'
         controller: 'VideosCtrl'
+      .when '/videos/sort/:sortType',
+        templateUrl: 'views/videos.html'
+        controller: 'VideosCtrl'  
       .when '/videos/:videoId',
         templateUrl: 'views/video-detail.html'
         controller: 'VideosCtrl'

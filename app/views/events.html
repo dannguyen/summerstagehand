@@ -9,10 +9,13 @@
 
   <div class="controls">
 
-  <select id="cityComboBox" ng-model="theCategory">
-
+  
+<label for="catComboBox">Filter by</label>
+  <select id="catComboBox" name="catComboBox" ng-model="theCategory">
+  
+    
     <option value checked="checked">All</option>
-    <option ng-repeat="category in ['Music', 'Dance']" value="{{category}}">      
+    <option ng-repeat="category in categories" value="{{category}}">      
       {{category}}
     </option>  
   </select>    
@@ -26,46 +29,25 @@
        
 
       <div class="row">
-         <div ng-repeat="event in filteredEvents = (events | filter:{category: theCategory })" class="span6" ng-animate="{enter: 'view-enter', leave: 'view-leave'}">
+         <div ng-repeat="event in filteredEvents = (events | filter:{canonical_category: theCategory })" class="span4" ng-animate="{enter: 'view-enter', leave: 'view-leave'}">
 
                <div class="tk-event">
-                  <div class="sub row">
-            
-                     <div class="span2">                  
-                           <div class="minopt">
-                            <a ng-href="/#/events/{{event.id}}"> 
-                                <img src="http://placehold.it/150x100" alt="image">
-                             </a>   
-                           </div>
-                       </div>
 
-                       <div class="span4"> 
-
-                          
-                          <strong>{{event.listed_category}}</strong> in <strong>{{event.borough}}</strong> / {{event.place_name}}
-
-                           <div class="datetime">
+                           <div class="datetime" style="color: #bbb">
                              {{[event.start_time, event.end_time] | standardTimeMinimal }}
                             
                           </div>
+                          
+                          <div><strong>{{event.listed_category}}</strong> in {{event.place_name}}, {{event.borough}} </div>
+
 
 
 
                            <a ng-href="/#/events/{{event.id}}"> 
-                             {{event.short_name}}  
+                             {{event.name}}  
                           </a>
 
  
-                         </div>
-
-  
-   
-                       
-                       
-                       </div> <!--span3 -->
-
-                      
-                  </div>
 
                </div> <!--tk-event-->
 
