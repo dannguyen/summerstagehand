@@ -1,5 +1,42 @@
 'use strict';
 
+
+
+angular.module('summerstagehandApp')
+  .directive('eventBlurb', () ->
+    template: """<div>
+
+
+
+ <div class="tk-event">
+      <div class="datetime" style="color: #bbb">
+        {{[event.start_time, event.end_time] | standardTimeMinimal }}
+     </div>
+                          
+      <div><strong>{{event.listed_category}}</strong> in {{event.place_name}}, {{event.borough}} </div>
+   <a ng-href="/#/events/{{event.id}}"> 
+     {{event.name}}  
+  </a> 
+</div> <!--tk-event-->
+
+
+
+</div>"""
+    restrict: 'E'
+    link: (scope, element, attrs) ->
+  )
+
+
+
+
+
+
+
+
+
+
+
+
 ## not working
 angular.module('summerstagehandApp')
   .directive('eventListing', () ->

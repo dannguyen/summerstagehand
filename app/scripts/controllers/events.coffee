@@ -24,13 +24,17 @@ yoapp.controller 'EventsCtrl', ["$scope", "$routeParams", "SummerEvent", "summer
          loadPlace = (p_id) ->
             $scope.placeDataReady = false
             return unless p_id?
+
             $scope.place = SummerStagePlace.get({placeId: p_id}, (data) ->
-               $scope.place = data.place
+               $scope.place = s_place = data.place
                $scope.placeDataReady = true
 
 
-               $scope.place.limited_events = _.reject $scope.place.events, (e) -> e == $scope.event 
-               $scope.place.limited_events = $scope.place.limited_events[0..5]
+               $scope.otherPlaceEvents = _.select s_place.events, (pev) -> 
+                  pev.id != $scope.event.id
+
+
+               $scope.otherPlaceEvents = $scope.otherPlaceEvents[0..5]
 
                )
 

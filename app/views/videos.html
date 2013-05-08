@@ -4,27 +4,33 @@
 <section id="videorama">
    
 <div class="container">
-   <h1>Videorama!</h1>
+<div class="span6">
+    <h1 class="sec">Videorama!</h1>
+ 
+   </div> 
+ <div class="span6">  
 
-   <div class="controls">
-
-  <select id="catComboBox" ng-model="theCategory">
-
-    <option value checked="checked">All</option>
-    <option ng-repeat="category in categories" value="{{category}}">      
-      {{category}}
-    </option>  
-  </select>    
-
-  
-  <p>
-     Sorted by: <a href="/#/videos">Event date</a> | <a href="/#/videos/sort/view_count">View count</a>
-
-  </p>
+   <br>
+    <div class="controls" style="text-align: right;">
+ 
+   <select id="catComboBox" ng-model="theCategory">
+ 
+     <option value checked="checked">All</option>
+     <option ng-repeat="category in categories" value="{{category}}">      
+       {{category}}
+     </option>  
+   </select>    
+ 
    
-
-  </div>
-
+   <p>
+      Sorted by: <a href="/#/videos">Event date</a> | <a href="/#/videos/sort/view_count">View count</a>
+ 
+   </p>
+    
+ 
+   </div>
+ 
+ </div>
 </section>
 
 

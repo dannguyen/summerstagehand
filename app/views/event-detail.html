@@ -60,7 +60,7 @@
 			<div class="description">
 
 
-				<img class="fRight" ng-src="{{event.image_url}}" alt="">
+				<img class="fRight bs" ng-src="{{event.image_url}}" alt="">
 
 				<div ng-bind-html="event.description | convertParagraphs">
 				</div>
@@ -115,30 +115,43 @@
 			&nbsp;
 			<div class="place" ng-show="placeDataReady" ng-animate="{enter: 'view-enter'}"> 
 
+
+<a target="_map" href="{{[place.lat, place.lng] | googleMaps}}">
 				<div class="imgwrap">
 
-					<img src="{{ {h:300, w:220, markers:[{lat: place.lat, lng:place.lng}]} | googleStaticMap }} ">
+					<img ng-src="{{ {h:300, w:220, markers:[{lat: place.lat, lng:place.lng}]} | googleStaticMap }} ">
 				</div>
 	
-								<div><a href="/#/places/{{place.id}}">{{place.name}}</a></div>
+								
 
 				<div>
-					<a target="_map" href="{{[place.lat, place.lng] | googleMaps}}">Google Maps</a>
+					Google Maps
 				</div>
+			</a>	
 
 				<div>
-					<a target="_fsq" href="{{place.foursquare_canonical_id | foursquareVenue}}">Check-in on Foursquare</a>
+					<a target="_fsq" href="{{place.foursquare_canonical_id | foursquareVenue}}">Foursquare</a>
 				</div>				
-				<h5>More events here</h5>
+
+<div ng-show="otherPlaceEvents.length > 0">
+				<h5>More events at <br><a href="/#/places/{{place.id}}">{{place.name}}</a></div>
+</h5>
+
+
+
 
 				<ul class="unstyled agate">
-					<li ng-repeat="p_event in place.limited_events" ng-animate="{enter: 'view-enter'}">
+					<li ng-repeat="p_event in otherPlaceEvents" ng-animate="{enter: 'view-enter'}">
 						{{p_event.start_time | shortDate}}
 						<a ng-href="/#/events/{{p_event.id}}">{{p_event.name}}</a>
 					</li>
 				</ul>
+
+				</div>
 				
 				<p>See all <a href="/#/places/{{place.id}}">events at {{place.name}}</a></p>
+
+
 
 			</div>
 

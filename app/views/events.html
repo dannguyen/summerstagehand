@@ -1,15 +1,17 @@
-<h1></h1>
 
 
-
+<section class="woz">
    
    <div class="loading" ng-hide="eventsDataReady" ng-animate="'fade'">
       Data loading...
    </div>
 
-  <div class="controls">
 
-  
+<div class="row">
+  <div class="span6"><h1 class="sec">Calendar</h1></div>
+  <div class="span6">
+    
+  <div class="controls" style="text-align: right">  
 <label for="catComboBox">Filter by</label>
   <select id="catComboBox" name="catComboBox" ng-model="theCategory">
   
@@ -23,36 +25,19 @@
 
   </div>
 
+  </div>
+</div> <!--row -->
+
+</section>
+
    <section ng-repeat="(day, events) in groupedEvents">
 
       <h4 class="weekname" ng-show="filteredEvents.length > 0">{{day | plus6days}}</h4>
        
 
       <div class="row">
-         <div ng-repeat="event in filteredEvents = (events | filter:{canonical_category: theCategory })" class="span4" ng-animate="{enter: 'view-enter', leave: 'view-leave'}">
-
-               <div class="tk-event">
-
-                           <div class="datetime" style="color: #bbb">
-                             {{[event.start_time, event.end_time] | standardTimeMinimal }}
-                            
-                          </div>
-                          
-                          <div><strong>{{event.listed_category}}</strong> in {{event.place_name}}, {{event.borough}} </div>
-
-
-
-
-                           <a ng-href="/#/events/{{event.id}}"> 
-                             {{event.name}}  
-                          </a>
-
- 
-
-               </div> <!--tk-event-->
-
-
-
+         <div ng-repeat="event in filteredEvents = (events | filter:{canonical_category: theCategory })" class="span4" >
+               <event-blurb></event-blurb>
             </div> <!--span -->
       </div>
    </div>

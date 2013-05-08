@@ -12,6 +12,9 @@ angular.module('summerstagehandApp')
 				"<p>#{p}</p>"
 			arr.join("")
 
+	.filter 'shortenString', () ->
+		(str) ->
+			str.substring(0,45) + "..."
 
 	.filter 'youtubeSrc', () ->
 		(vid) ->

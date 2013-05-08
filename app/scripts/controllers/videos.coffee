@@ -31,11 +31,21 @@ angular.module('summerstagehandApp')
 
          if !!$routeParams.videoId
             $rootScope.noContainer = false 
-            $scope.video = _.find $scope.videos, (vid) -> vid.uid == $routeParams.videoId
-            $scope.event = SummerEvent.get({eventId: $scope.video.event_id}, (data) ->
-               $scope.event = data.event
-               
+            $scope.video = the_video = _.find $scope.videos, (vid) -> vid.uid == $routeParams.videoId
+
+            $scope.event = SummerEvent.get({eventId: $scope.video.event_id}, (ed) ->
+               $scope.event = ed.event
+               $scope.eventDataReady = true  
+
+               $scope.otherEventVideos = _.select $scope.videos, (evid) -> 
+                  evid.uid != the_video.uid && evid.event_id == the_video.event_id
+
+               $scope.relatedVideos = _.select $scope.videos, (evid) ->
+                  evid.uid != the_video.uid && evid.category.match the_video.category && evid.event_id != the_video.event_id
+
+
                )
+
 
          $scope.dataReady = true
   

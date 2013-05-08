@@ -3,14 +3,18 @@
 angular.module('summerstagehandApp')
   .directive('videoStub', () ->
     template: """
-    	<div class="video bg" ng-mouseover="makeActive(video)" ng-switch="activeVideoId === video.uid">
+    	<div class="video bg" ng-mouseover="makeActive(video)" ng-switch="activeVideoId === video.uid" ng-animate="'view'">
        <a href="/#/videos/{{video.uid}}"> 
         <div ng-switch-default>
     			<img ng-src="{{video.thumbnail}}" alt=" ">
          </div>
 
          <div ng-switch-when="true">  
-           <p class="title" style="text-align: center; padding: 10%;">{{video.title}}</p>
+<div class="inset-info">
+           <p class="title" style="text-align: center; padding: 5%;">{{video.title}}
+            <br> {{video.view_count}} views
+            </p>
+            </div>
          </div>
 
         </a>

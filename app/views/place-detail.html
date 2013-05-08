@@ -27,24 +27,52 @@
 				<h2>{{place.borough}}</h2>
 	</section>
 
-	<section>
-		<div>
-			<strong>Description</strong>
+	<section class="woz">
+
+		<div class="row">
+				<div class="span6">
+
+&nbsp;
+				</div>
+
+<div class="span6">				
+
+<a target="_map" href="{{[place.lat, place.lng] | googleMaps}}">
+	<div class="imgwrap bs">
+
+					<a href=""><img src="{{ {h:400, w:600, markers:[{lat: place.lat, lng:place.lng}]} | googleStaticMap }} "></a>
+				</div>
+Google Maps
+</a>
+
+</div>
 		</div>
 
-		<div>
-			<strong>Events listing</strong>
+<section class="woz">
+		<h3>Events</h3>
+		<div class="row">
 	
 			<div ng-repeat="event in place.events">
 				
-				<a ng-href="/#/events/{{event.id}}">{{event.name}}</a>
+				<div class="span4"			
+							 <div class="tk-event">
+			      <div class="datetime" style="color: #bbb">
+			        {{[event.start_time, event.end_time] | standardTimeMinimal }}
+			     </div>
+			                          
+			   <a ng-href="/#/events/{{event.id}}"> 
+			     {{event.name}}  
+			  </a> 
+			</div> <!--tk-event-->
+
+			</div>
+
 				
 			</div>	
 
 		</div>
 
-		<div>See on a Google Map (lat,lng)</div>
-	
+	</section>
 
 	</section> 
 	<!--frontmatter-->

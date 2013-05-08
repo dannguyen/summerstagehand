@@ -141,12 +141,11 @@
 
 
 .view-leave-setup {
-  transform: scale(1,1);  
-  -ms-transform: scale(1,1); /* IE 9 */
-  -webkit-transform: scale(1,1); /* Safari and Chrome */
+
   opacity:1;
 }
 .view-leave-setup.view-leave-start {
   opacity:0;
 
 }
+
