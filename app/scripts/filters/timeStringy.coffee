@@ -14,14 +14,18 @@ angular.module('summerstagehandApp')
 
 	.filter 'shortenString', () ->
 		(str) ->
-			if str.length > 45
-				str.substring(0,45) + "..."
+			if str.length > 60
+				str.substring(0,60) + "..."
 			else
 				str
 	.filter 'youtubeSrc', () ->
 		(vid) ->
 			# converts to youtube video with unique vid identifier
 			"http://www.youtube.com/embed/#{vid}?rel=0&theme=light&autoplay=0"
+	.filter 'youtubeSrcAuto', () ->
+		(vid) ->
+			# converts to youtube video with unique vid identifier
+			"http://www.youtube.com/embed/#{vid}?rel=0&theme=light&autoplay=1"
 
 	.filter 'googleMaps', () ->
 		(coords) ->

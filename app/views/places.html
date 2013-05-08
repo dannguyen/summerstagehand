@@ -19,10 +19,7 @@
                         <a ng-href="/#/places/{{place.id}}"><img ng-src="/images/remote/places/small/{{place.image_url}}"></a>
                       </div>
                       <div>
-                        <h3> <a ng-href="/#/places/{{place.id}}">{{place.name}}</a> </h3>
-                      </div>
-                      <div>
-                         {{place.address}}
+                        <h3 style="margin-bottom: 0px"> <a ng-href="/#/places/{{place.id}}">{{place.name}}</a> </h3>
                       </div>
                       <div>
                         <ng-pluralize count="place.events_count" when="{'0': '', 'one': '1 event', 'other': '{} events'}"></ng-pluralize>
