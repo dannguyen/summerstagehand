@@ -23,8 +23,14 @@
 					<div class="span3">
 												<div class="sked">						
 
-						<div><strong>Price:</strong> Free (TK)</div>
-						<div><a ng-href="{{event.homepage_url}}">Event Listing on UPlanMe</a></div>							
+						<div ng-switch="!!event.ticket_url"><strong>Price:</strong> 
+							
+							<span ng-switch-default>Free</span>						
+
+							<span ng-switch-when="true"><a ng-href="{{event.ticket_url}}">Tickets</a></span>						
+
+						</div>
+						<div></div>							
 												</div>	
 
 					</div>
@@ -32,7 +38,7 @@
 					<div class="span3">
 												<div class="sked">						
 
-						<div><strong>Price:</strong> Free (TK)</div>
+						<div><a ng-href="https://twitter.com/intent/tweet?text=Check+out+this+on+@SummerStage&url={{this_url}}">Tweet</a></div>
 						<div><a ng-href="{{event.homepage_url}}">Event Listing on UPlanMe</a></div>							
 												</div>	
 
@@ -134,8 +140,12 @@
 				</div>				
 
 <div ng-show="otherPlaceEvents.length > 0">
-				<h5>More events at <br><a href="/#/places/{{place.id}}">{{place.name}}</a></div>
+				<h5>More events at <br><a href="/#/places/{{place.id}}">{{place.name}}</a>
 </h5>
+
+<br>
+
+
 
 
 
@@ -148,6 +158,8 @@
 				</ul>
 
 				</div>
+
+		</div>		
 				
 				<p>See all <a href="/#/places/{{place.id}}">events at {{place.name}}</a></p>
 

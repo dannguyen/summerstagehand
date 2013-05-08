@@ -7,35 +7,38 @@
 		
 		<div class="row">
 		
-	<a href="/#/events">		<div class="span4">
+	
+		<div class="span4">
 								
-			
+				<a href="/#/events">	
 							<div class=" imgwrap"><img src="/images/remote/places/small/7.jpg" alt="Events"></div>
 								<h2>EVENTS</h2>
-			
-				</div>
 			</a>
 			
-		<a href="/#/places">
+				</div>
+			
 									
 							<div class="span4">
+		<a href="/#/places">
+
 								<div class="imgwrap"><img src="/images/remote/places/small/3.jpg" alt="Venues"></div>
 													<h2>VENUES</h2>
+				</a>
+
 							</div>
 				
 					
-				</a>
 		
+				<div class="span4">
 		
 		<a href="/#/videos">
-				<div class="span4">
 									
 									<div class="imgwrap"><img src="/images/remote/places/small/2.jpg" alt="Videorama"></div>
 									<h2>VIDEORAMA</h2>
+				</a>
 				
 							</div>
 				
-				</a>
 			
 			</div>	
 		
@@ -52,37 +55,28 @@
 
 
 <section class="woz">
-		<div class="row" ng-repeat="event in events">
 
-
-
-
+<h3>Upcoming Shows</h3>
+<div class="row featured-events">
+		<div ng-repeat="event in events">
 			
 			<div class="span3">
+	<div class="event box">
+				<div class="imgwrap">
+					<a ng-href="/#/events/{{event.id}}"><img ng-src="{{event.feature_thumbnail}}" alt=""></a>
+				</div>
+
 				{{event.start_time | readableDate}}  <a ng-href="/#/events/{{event.id}}">{{event.name}}</a>
-			</div>
+				at <a ng-href="/#/places/{{event.place_id}}">{{event.place_name}}</a>
 
-				
-		
-
-
-<div class="span3">
-				{{event.start_time | readableDate}}  <a ng-href="/#/events/{{event.id}}">{{event.name}}</a>
-			</div>
-
-<div class="span3">
-				{{event.start_time | readableDate}}  <a ng-href="/#/events/{{event.id}}">{{event.name}}</a>
+				</div>
 			</div>
 
 
-<div class="span3">
-				{{event.start_time | readableDate}}  <a ng-href="/#/events/{{event.id}}">{{event.name}}</a>
-			</div>
 
+		</div>
 
-		</div> <!--row-->
-
-
+</div> <!--row-->
 </section>
 
 </div> <!--container-->
@@ -100,23 +94,21 @@
 		<section class="about span6">
 				<h4>About SummerStageLove</h4>
 				<p>
-					<strong>STAGEORAMA</strong> was built by Dan Nguyen of Skift for the
-					<a href="http://hacksummerstage.com/">2013 Hack SummerStage Challenge</a>. 
+I made this website because I wanted a fast simple way to browse the events at <a href="http://www.cityparksfoundation.org/summerstage/">SummerStage 2013</a>. I already have apps to find where the parks and the train stops are, so <em>SummerStageLove</em> is focused just on making it easier to discover music. I'm not very good at figuring out music by reading about music, so in addition to <a href="/#/events">creating a easily readable list</a>, I collected more than <a href="/#/videos">a hundred YouTube videos for this year's SummerStage performers</a>.</p> 
 
-					It is not officially endorsed by the
-					New York City Parks Foundation nor the SummerStageTK
-				</p>
+<p>If you're in New York this summer, you might find SummerStageLove useful too. The summer's already short enough without spending time just looking for things to see and do.</p>
 
 
-				<p>
-I built this website because I wanted a fast simple way to see all the events that are scheduled this summer. But after doing that, I realized there were a lot of performers who I hadn't either seen or heard of before, so I used the YouTube API to discover shows that I might not have been interested in if I hadn't seen their TK performance. SummerStageLove contains more than 200x videos related to the shows here. I hope you find the information helpful in planning out your summer!</p>
+<p>This site would not have been possible without the APIs and services of the <a href="http://www.cityparksfoundation.org/summerstage/">City Parks Foundation</a>, <a href="http://www.uplanme.com/">UPlanMe</a>, <a href="http://challengepost.com/">ChallengePost</a>, <a href="http://aws.amazon.com/">Amazon AWS</a>, <a href="http://foursquare.com">Foursquare</a>, <a href="https://developers.google.com/maps/">Google Maps</a>, and of course, <a href="https://developers.google.com/youtube/">YouTube</a>.
 
+</p>
 
+		<p>
+			If you do like <em>SummerStageLove</em>, feel free to vote for it in the <a href="http://hacksummerstage.com/submissions">HackSummerStage Challenge</a>.
+			If you have any questions or comments, feel free to contact me on Twitter at <a href="https://twitter.com/dancow">@dancow</a> or at my <a href="http://danwin.com">blog</a>.
+		</p>
+<p><em>&ndash; Dan Nguyen</em></p>
 
-				<p>
-					So if you find this app useful, please consider voting for it in the Hack SummerStage Challenge.
-					If you have any questions/complaints, feel free to contact me on Twitter at @dancow or at my blog
-				</p>
 		</section>
 
 

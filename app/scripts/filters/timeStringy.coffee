@@ -14,8 +14,10 @@ angular.module('summerstagehandApp')
 
 	.filter 'shortenString', () ->
 		(str) ->
-			str.substring(0,45) + "..."
-
+			if str.length > 45
+				str.substring(0,45) + "..."
+			else
+				str
 	.filter 'youtubeSrc', () ->
 		(vid) ->
 			# converts to youtube video with unique vid identifier

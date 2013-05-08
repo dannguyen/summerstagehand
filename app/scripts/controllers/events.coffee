@@ -2,11 +2,12 @@
 
 yoapp = angular.module('summerstagehandApp')
 
-yoapp.controller 'EventsCtrl', ["$scope", "$routeParams", "SummerEvent", "summerStageEvents", "SummerStagePlace", "$rootScope", 
-	($scope, $routeParams, SummerEvent, summerStageEvents, SummerStagePlace, $rootScope) ->
+yoapp.controller 'EventsCtrl', ["$scope", "$window", "$routeParams", "SummerEvent", "summerStageEvents", "SummerStagePlace", "$rootScope", 
+	($scope, $window, $routeParams, SummerEvent, summerStageEvents, SummerStagePlace, $rootScope) ->
 
          $scope.eventsDataReady = false
          $rootScope.noContainer = false 
+         $scope.this_url = $window.location.href
 
 #         $scope.filterService = { activeFilters: {} }
          $scope.theCategory = ""
