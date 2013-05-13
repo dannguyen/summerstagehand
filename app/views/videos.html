@@ -7,6 +7,9 @@
 <div class="span6">
     <h1 class="sec">Videorama!</h1>
  
+ <div ng-hide="dataReady">
+<p><em>Data loading...</em></p>
+</div>
    </div> 
  <div class="span6">  
 
@@ -34,14 +37,13 @@
 </section>
 
 
-<section class="rama woz" ng-hide="randomVideos.length == 0"  ng-show="dataReady">
+<section class="rama woz"   ng-show="dataReady">
 
 
 
 <div class="clearfix" ng-class="ramaSize">
 
-
-   <video-stub ng-repeat="video in videos  | filter:{category: theCategory }  "> 
+   <video-stub ng-repeat="video in videos  | filter:{category_list: theCategory }"> 
    </video-stub>   
 
 </div>
@@ -52,11 +54,3 @@
 
 
 
-<!-- 
-<section class="row " ng-show="dataReady">
-   <div ng-repeat="video in videos"  class="video" style="width:10%; min-width: 80px; float: left">   
-      <video-stub>Loading...</video-stub>   
-   </div>
-</section>   
-</div>
--->

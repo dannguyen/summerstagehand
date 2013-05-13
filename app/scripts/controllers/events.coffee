@@ -46,6 +46,7 @@ yoapp.controller 'EventsCtrl', ["$scope", "$window", "$routeParams", "SummerEven
          if event_id?
             $scope.event = SummerEvent.get({eventId: event_id}, (edata) ->
                $scope.event = edata.event
+               $scope.related_events = _.sortBy $scope.event.related_events, (rev) -> rev.start_time
                $scope.dataReady = true
                loadPlace($scope.event.place_id)
             )
@@ -55,8 +56,7 @@ yoapp.controller 'EventsCtrl', ["$scope", "$window", "$routeParams", "SummerEven
 
 
                $scope.events = orderEventsData data
-               $scope.categories = _.uniq(_.pluck( $scope.events, 'canonical_category'))
-               console.log $scope.categories 
+               $scope.categories = ( _.uniq(_.flatten(_.pluck( $scope.events, 'category_list')))).sort()
 
                $scope.groupedEvents = groupEventsData $scope.events
            

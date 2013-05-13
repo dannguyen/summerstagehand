@@ -17,7 +17,7 @@
 <meta property='og:url' content='http://www.summerstagelove.com'/>
 <meta property='og:site_name' content='SUMMERSTAGELOVE'/>
 
-<meta property='og:image' content="http://www.summerstagelove.com/images/stageorama.jpg">
+<meta property='og:image' content="http://www.summerstagelove.com.s3.amazonaws.com/static/stageorama.jpg">
 
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -46,12 +46,17 @@
    
     <div class="container">
 
-              <div class="logo"><a href="/">SUMMER<span style="color:#4a4;">STAGE</span>LOVE</a></div>
+              <div class="logo"><a href="/">
+                <span class="unofficial">An <span style="color:white;">UNOFFICIAL</span> SummerStage Discovery App</span>
+                SUMMER<span style="color:#4a4;">STAGE</span>LOVE</a>
+              </div>
 
         
 
 <div id="sub-banner">
-<div style="float: right" class="tagline">An unoffical videologue of the New York summer parks festival </div>
+<!--
+<div style="float: right; display: none;" class="tagline">An unoffical videologue of the New York summer parks festival </div>
+    -->
           
 <ul style="float: left" class="nav-list">
           <li><a href="#/events">Events</a></li>
@@ -144,7 +149,7 @@
     <p><strong>Disclaimer: </strong>This app was not developed by and has not been endorsed by the producers of the SummerStage Performing Arts Festival.</p>
 
     <p>
-      <em>SUMMERSTAGELOVE</em> is built and designed by <a href="https://danwin.com">Dan Nguyen</a> of <a href="http://www.skift.com">Skift</a>. You can reach him via Twitter: <a href="https://twitter.com/dancow">@dancow</a>
+      <em>SUMMERSTAGELOVE</em> is built and designed by <a href="https://danwin.com">Dan Nguyen</a> of <a href="http://www.skift.com">Skift</a>. You can reach him via Twitter: <a href="https://twitter.com/dancow">@dancow</a>. If you like it, vote for it at <a href="http://hacksummerstage.com/submissions/15383-summerstagelove">ChallengePost</a>.
 
     </p>
 
@@ -179,8 +184,6 @@
     <script src="scripts/controllers/events.js"></script>
     <script src="scripts/directives/eventListing.js"></script>
     <script src="scripts/services/filterService.js"></script>
-
-
     <script src="scripts/directives/placeStub.js"></script>
     <script src="scripts/services/SummerStageVideo.js"></script>
     <script src="scripts/directives/videoStub.js"></script>
@@ -191,12 +194,10 @@
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
-/*
       var _gaq=[['_setAccount','UA-40747723-1'],['_trackPageview']];
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
       g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
-*/      
     </script>
   </body>
 </html>

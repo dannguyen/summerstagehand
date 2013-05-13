@@ -6,9 +6,9 @@ angular.module('summerstagehandApp')
 
 
 		$scope.events = featuredSummerStageEvents.get( {}, (data) ->
-         console.log data.length
+#         console.log data.length
          $scope.events = _.reject data, (d) -> _.isEmpty d.feature_thumbnail
-         $scope.events =  _.sortBy( _.shuffle($scope.events)[0..7], 'start_time')         
+         $scope.events =  _.sortBy( _.shuffle($scope.events)[0..11], 'start_time')         
          
       )
 

@@ -10,44 +10,52 @@
 
 <div class="row"> 
 <div class="span6">
-<h5>As seen on YouTube:</h5> 
+  <h5>As seen on YouTube:</h5> 
    <div><a href="http://www.youtube.com/watch?v={{video.uid}}">{{video.title}}</a></div>
-<div>Uploaded by <a ng-href="{{video.author_uri}}">{{video.author}}</a></div>
+  <div>Uploaded by <a ng-href="{{video.author_uri}}">{{video.author}}</a></div>
 
-<div>Views: {{video.view_count}}</div>
-<div>Likes: {{video.likes}}</div>
+  <div>Views: {{video.view_count}}</div>
+  <div>Likes: {{video.likes}}</div>
 
 
 </div>
 
-<div class="span6"
-   <div ng-show="eventDataReady">
-      <h5>At SummerStage:<h5>
-            <div class="datetime" style="color: #bbb">
+<div class="span6">
+   <div ng-show="eventDataReady" class="box tk-event" style="background:#000;">
+      <h5>At SummerStage:</h5>
+      <div class="datetime" style="color: #bbb">
         {{[event.start_time, event.end_time] | standardTimeMinimal }}
      </div>
                           
       <div><strong>{{event.listed_category}}</strong> in {{event.place_name}}, {{event.borough}} </div>
+  
+
    <a ng-href="/#/events/{{event.id}}"> 
      {{event.name}}  
   </a> 
 
    </div>
 </div>
+</div>
 
 
 <div ng-show="otherEventVideos.length > 0">
 
    <section class="woz">
-   <p>Other videos associated with <a href="/#/events/{{event.id}}">{{event.name}}</a></p>
+
+    <h3>Related videos</h3>
+   <p>These videos are also associated with <a href="/#/events/{{event.id}}">{{event.name}}</a></p>
 
 
    <div class="row">
             <div class="span4" ng-repeat="ovideo in otherEventVideos">
                <div class="box video">
-               <a href="/#/videos/{{ovideo.uid}}">
-                  <div class="imgwrap"><img ng-src="{{ovideo.thumbnail}}" alt=" "></div>
-               {{ovideo.title}}</a>
+               
+                  <div class="imgwrap">
+
+                    <a ng-href="/#/videos/{{ovideo.uid}}">
+                      <img ng-src="{{ovideo.thumbnail}}" alt=" "></a></div>
+              <a ng-href="/#/videos/{{ovideo.uid}}"> {{ovideo.title}}</a>
 
                </div>
             </div>
@@ -57,26 +65,6 @@
 </div>
 
 
-
-<div ng-show="relatedVideos.length > 0">
-
-   <section class="woz">
-   <p>Other related videos</p>
-
-
-   <div class="row">
-            <div class="span4" ng-repeat="rvideo in relatedVideos">
-               <div class="box video">
-               <a href="/#/videos/{{rvideo.uid}}">
-                  <div class="imgwrap"><img ng-src="{{rvideo.thumbnail}}" alt=" "></div>
-               {{rvideo.title}}</a>
-
-               </div>
-            </div>
-   </div>
-      
-   </section>
-</div>
 
 
 

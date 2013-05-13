@@ -12,11 +12,16 @@ angular.module('summerstagehandApp')
       <div class="datetime" style="color: #bbb">
         {{[event.start_time, event.end_time] | standardTimeMinimal }}
      </div>
-                          
-      <div><strong>{{event.listed_category}}</strong> in {{event.place_name}}, {{event.borough}} </div>
+
+
+      <div>{{event.place_name}}, {{event.borough}} </div>
+
+<div><strong>{{event.category_list.join(', ')}}:</strong> 
    <a ng-href="/#/events/{{event.id}}"> 
      {{event.name}}  
   </a> 
+
+</div>
 </div> <!--tk-event-->
 
 

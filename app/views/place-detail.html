@@ -76,16 +76,22 @@ Google Maps
 	
 			<div ng-repeat="event in place.events">
 				
-				<div class="span4"			
+				<div class="span4">		
 				<div class="box">
 											 <div class="tk-event">
 							      <div class="datetime" style="color: #bbb">
 							        {{[event.start_time, event.end_time] | standardTimeMinimal }}
 							     </div>
 							                          
-							   <a ng-href="/#/events/{{event.id}}"> 
-							     {{event.name}}  
-							  </a> 
+
+<div><strong>{{event.category_list.join(', ')}}:</strong> 
+   <a ng-href="/#/events/{{event.id}}"> 
+     {{event.name}}  
+  </a> 
+
+</div>
+
+
 							</div> <!--tk-event-->
 				</div>
 			</div>

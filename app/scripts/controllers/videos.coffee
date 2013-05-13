@@ -5,7 +5,11 @@ angular.module('summerstagehandApp')
 
       $scope.videos = SummerStageVideos.get {}, (data) -> 
          $scope.videos = data
-         $scope.categories = _.uniq(_.pluck( $scope.videos, 'category'))
+         $scope.categories = ( _.uniq(_.flatten(_.pluck( $scope.videos, 'category_list')))).sort()
+
+
+         $scope.otherEventVideos = []
+         $scope.relatedVideos = []
 
          $scope.makeActive = (vid) ->
             $scope.activeVideoId = vid.uid
@@ -19,8 +23,8 @@ angular.module('summerstagehandApp')
          else
             $scope.sortType = 'event_date'
             $scope.videos = _.sortBy $scope.videos, (v) -> v.event_date
-
-         console.log($scope.sortType)
+         
+         
          $scope.theCategory = ''
 
          if $window.innerWidth < 500
@@ -53,7 +57,6 @@ angular.module('summerstagehandApp')
          
 ]
 
-#      $scope.showExtraNav = true
 
 
 

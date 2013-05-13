@@ -88,30 +88,35 @@
 
 			</section>
 
-<!--
-			<section>
-				<h4>Related events</h4>
-
-				<div class="" ng-repeat="r_event in event.related_events">
-					
-
-                  
-
-                     <div class="datetime">
-                       {{ r_event.start_time | readableDate }}
-                      
-                  	  </div>
 
 
-
-                     <a ng-href="/#/r_events/{{r_event.id}}"> 
-                       {{r_event.name}}  
-                    </a>
+<section class="woz" ng-show="related_events.length > 0">
+		<h3>Related events</h3>
+		<div class="row">
+	
+			<div ng-repeat="event in related_events">
+				
+				<div class="span4">		
+				
+				               <event-blurb></event-blurb>
 
 
 				</div>
-			
--->		
+
+				
+			</div>	
+
+		</div>
+
+	</section>
+
+
+
+
+
+
+
+
 
 		</div>
 

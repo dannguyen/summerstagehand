@@ -36,7 +36,7 @@
        
 
       <div class="row">
-         <div ng-repeat="event in filteredEvents = (events | filter:{canonical_category: theCategory })" class="span4" >
+         <div ng-repeat="event in filteredEvents = (events | filter:{category_list: theCategory })" class="span4" >
                <event-blurb></event-blurb>
             </div> <!--span -->
       </div>

@@ -8,10 +8,17 @@
 h1{
 	margin-bottom: 0.1em;
 	font-weight: 400;
-	
 	color: #bbb;
 }
 
+
+
+h2{
+	a:link, a:visited{
+		color: white;
+	}
+
+}
 h1.sec{
 	font-size: 3.5em;
 }
@@ -201,11 +208,19 @@ ul.filters{
 
 .featured-events{
 	.event{
-
 	height: 250px;
 	overflow: hidden;
+		.imgwrap{margin-bottom: 5px;
+			img{ width: 100%;}
+		}
+	}
+}
 
-		.imgwrap{margin-bottom: 5px;}
+
+@media (max-width:480px) {
+	.featured-events .event{
+		height: auto;
+		overflow: visible;
 	}
 }
 
@@ -246,6 +261,15 @@ footer.footer{
 	font-size: 32px;
 	@media (max-width: 767px) {
 		font-size: 1.3em;
+	}
+
+	.unofficial{
+		display:block;
+		font-weight: 400;
+		font-size: 15px;
+		margin-bottom: 3px;
+		margin-top: 0px;
+		color: #ddd;
 	}
 }
 

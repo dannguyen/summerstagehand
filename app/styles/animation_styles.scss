@@ -124,11 +124,11 @@
 
 
 .view-enter-setup, .view-leave-setup {
-   -webkit-transition: 0.3s ease-out all; /* Safari/Chrome */
- -moz-transition: 0.3s ease-out all; /* Firefox */
- -ms-transition: 0.3s ease-out all; /* IE10 */
- -o-transition: 0.3s ease-out all; /* Opera */
- transition: 0.3s ease-out all; /* Future Browsers */
+   -webkit-transition: 0.5s ease-out all; /* Safari/Chrome */
+ -moz-transition: 0.5s ease-out all; /* Firefox */
+ -ms-transition: 0.5s ease-out all; /* IE10 */
+ -o-transition: 0.5s ease-out all; /* Opera */
+ transition: 0.5s ease-out all; /* Future Browsers */
 }
 
 .view-enter-setup {

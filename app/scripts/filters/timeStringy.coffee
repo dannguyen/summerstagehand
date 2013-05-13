@@ -21,11 +21,11 @@ angular.module('summerstagehandApp')
 	.filter 'youtubeSrc', () ->
 		(vid) ->
 			# converts to youtube video with unique vid identifier
-			"http://www.youtube.com/embed/#{vid}?rel=0&theme=light&autoplay=0"
+			"http://www.youtube.com/embed/#{vid}?rel=0&theme=dark&color=white&autoplay=0"
 	.filter 'youtubeSrcAuto', () ->
 		(vid) ->
 			# converts to youtube video with unique vid identifier
-			"http://www.youtube.com/embed/#{vid}?rel=0&theme=light&autoplay=1"
+			"http://www.youtube.com/embed/#{vid}?rel=0&theme=dark&color=white&autoplay=1"
 
 	.filter 'googleMaps', () ->
 		(coords) ->
