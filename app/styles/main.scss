@@ -11,6 +11,16 @@ h1{
 	color: #bbb;
 }
 
+.vote-note{
+	color: #ddd;
+	font-style: italic;
+	margin-top: 1.5em;
+
+	a:link{
+		color: $linkColor;
+	}
+}
+
 
 
 h2{

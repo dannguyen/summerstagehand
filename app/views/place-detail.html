@@ -54,18 +54,21 @@
 
 <div class="span6">				
 
-<a target="_map" href="{{[place.lat, place.lng] | googleMaps}}">
 	<div class="imgwrap bs">
-
-<img src="{{ {h:400, w:600, markers:[{lat: place.lat, lng:place.lng}]} | googleStaticMap }} ">
-				</div>
+<a target="_map" ng-href="{{[place.lat, place.lng] | googleMaps}}">
+		<img ng-src="{{ {h:400, w:600, markers:[{lat: place.lat, lng:place.lng}]} | googleStaticMap }} ">
+</a>		
+	</div>
 
 <p>
-	{{place.address}}, {{place.zip}}
-</p>
+<a target="_map" ng-href="{{[place.lat, place.lng] | googleMaps}}">
+
+	{{place.address}}, {{place.zip}}<br>
 
 Google Maps
 </a>
+
+</p>
 
 </div>
 		</div>
